@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://drossh3nlwgum" path="res://scripts/mask.gd" id="1_in0c2"]
 [ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://assets/icon.svg" id="2_rv8xw"]
 [ext_resource type="Shader" uid="uid://idse4fk51kte" path="res://scripts/silhouette.gdshader" id="2_xsism"]
-[ext_resource type="Texture2D" uid="uid://cj03mqhm1oti6" path="res://assets/debug_texture.png" id="3_2a672"]
-[ext_resource type="Texture2D" uid="uid://d30o8xvfyhyph" path="res://assets/debug_silouhette.png" id="3_uscli"]
+[ext_resource type="Texture2D" uid="uid://bct5f5l4kl20g" path="res://assets/mask/mask_diplo_spots.png" id="3_2a672"]
+[ext_resource type="Texture2D" uid="uid://cfkc7boujnl0s" path="res://assets/mask/mask_diplo_happy.png" id="4_8u57e"]
+[ext_resource type="Texture2D" uid="uid://04ftw585wj72" path="res://assets/mask/mask_eyes.png" id="5_0iq2y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2a672"]
 resource_local_to_scene = true
 shader = ExtResource("2_xsism")
 shader_parameter/overlay_tex = ExtResource("3_2a672")
-shader_parameter/scale = 0.056
+shader_parameter/scale = 0.006
 shader_parameter/color = Vector4(0.5, 0, 1, 1)
 
 [node name="Mask" type="Node2D" unique_id=1409669806]
@@ -18,15 +19,13 @@ script = ExtResource("1_in0c2")
 
 [node name="Silhouette" type="Sprite2D" parent="." unique_id=2117661118]
 material = SubResource("ShaderMaterial_2a672")
-texture = ExtResource("3_uscli")
+texture = ExtResource("3_2a672")
 
 [node name="Mouth" type="Sprite2D" parent="." unique_id=424140755]
-visible = false
-texture = ExtResource("2_rv8xw")
+texture = ExtResource("4_8u57e")
 
 [node name="Eyes" type="Sprite2D" parent="." unique_id=1862056157]
-visible = false
-texture = ExtResource("2_rv8xw")
+texture = ExtResource("5_0iq2y")
 
 [node name="Horns" type="Sprite2D" parent="." unique_id=1460204295]
 visible = false
