@@ -32,5 +32,4 @@ texture = ExtResource("6_13g8o")
 texture = ExtResource("7_h7770")
 
 [node name="Horns" type="Sprite2D" parent="." unique_id=1460204295]
-visible = false
 texture = ExtResource("8_p3q4p")

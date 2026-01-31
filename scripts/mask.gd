@@ -8,12 +8,16 @@ extends Node2D
 @onready var horns: Sprite2D = $Horns
 
 func _ready() -> void:
-	shape.texture = description.phenotype.SILHOUTTE_TEXTURE
-	mouth.texture = description.phenotype.MOUTH_TEXTURE
+	var phenotype = description.get_phenotype()
 	
-	if description.phenotype.horns:
-		horns.texture = description.phenotype.HORNS_TEXTURE
+	shape.texture = phenotype.SILHOUTTE_TEXTURE
+	mouth.texture = phenotype.MOUTH_TEXTURE
+	
+	if phenotype.horns:
+		horns.texture = phenotype.HORNS_TEXTURE
+	else:
+		horns.texture = null
 
-	emotion.texture = description.phenotype.EMOTIONS_TEXTURES[description.emotion]
-	shape.material.set_shader_parameter("color", description.COLORS[description.color])
+	emotion.texture = description.get_emotion_texture()
+	shape.material.set_shader_parameter("color", description.get_color())
 	

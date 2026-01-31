@@ -48,8 +48,17 @@ const PHENOTYPES: Dictionary[Species, Phenotype] = {
 	Species.OVIRAPTOR : preload("uid://bypngs0p73xle"),
 }
 
-func _init():
+func _init() -> void:
 	species = Species.DIPLODOCUS
 	emotion = Emotion.HAPPY
 	pattern = Pattern.NONE
 	color = MaskColor.RED
+
+func get_phenotype() -> Phenotype:
+	return PHENOTYPES[species]
+
+func get_emotion_texture() -> CompressedTexture2D:
+	return get_phenotype().EMOTIONS_TEXTURES[emotion]
+
+func get_color() -> Color:
+	return COLORS[color]
