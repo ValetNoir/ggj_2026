@@ -9,6 +9,14 @@ extends Node2D
 @onready var horns: Sprite2D = $Horns
 
 func _ready() -> void:
+	set_description()
+
+func set_outline(value: bool) -> void:
+	shape.material.set_shader_parameter("is_outline_on", value)
+	
+func set_description(_description = description):
+	description = _description
+	
 	var phenotype = description.get_phenotype()
 	
 	shape.texture = phenotype.SILHOUTTE_TEXTURE
@@ -22,6 +30,3 @@ func _ready() -> void:
 	emotion.texture = description.get_emotion_texture()
 	shape.material.set_shader_parameter("mask_color", description.get_color())
 	shape.material.set_shader_parameter("overlay_tex", description.get_pattern_texture())
-
-func set_outline(value: bool) -> void:
-	shape.material.set_shader_parameter("is_outline_on", value)

@@ -27,9 +27,9 @@ enum Shape { PEAR, FRILL, CARNIVORE, DUCKBILL, EGG }
 @export var color: MaskColor
 
 const PATTERN_TEXTURES: Dictionary[Pattern, CompressedTexture2D] = {
-	Pattern.NONE : preload("uid://d3v8eynat77lb"),
+	Pattern.NONE : preload("uid://c6hrpe6aj0762"),
 	Pattern.DOTS : preload("uid://cfrg4u7k7bp7u"),
-	Pattern.FEATHERS : preload("uid://d3v8eynat77lb"),
+	Pattern.FEATHERS : preload("uid://cgvdktnnlf4j6"),
 };
 const COLORS: Dictionary[MaskColor, Color] = {
 	MaskColor.RED : Color.RED,

@@ -24,5 +24,5 @@ func spawn(description: Description) -> void:
 	var character: Character = _character_scene.instantiate()
 	assert(is_instance_valid(character), "Invalid character")
 	character.global_position = spawn_position
-	character.description = description
 	add_child(character)
+	character._mask.set_description(description)
