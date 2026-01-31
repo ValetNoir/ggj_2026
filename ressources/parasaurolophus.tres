@@ -1,10 +1,20 @@
 [gd_resource type="Resource" script_class="Phenotype" format=3 uid="uid://bbrqruxw38oaq"]
 
+[ext_resource type="Texture2D" uid="uid://0pmiddjhg8ad" path="res://assets/mask/happy/mask_parasauro_happy.png" id="1_55i18"]
 [ext_resource type="Script" uid="uid://bgc5iavwvki00" path="res://scripts/phenotype.gd" id="1_ok2kn"]
+[ext_resource type="Texture2D" uid="uid://ds3ad1dxjwwfe" path="res://assets/mask/sad/mask_parasauro_sad.png" id="2_ssh8h"]
+[ext_resource type="Texture2D" uid="uid://d20m04boi3oux" path="res://assets/mask/faces/mask_parasauro_face.png" id="3_53aq6"]
+[ext_resource type="Texture2D" uid="uid://b5ooa88kfmljl" path="res://assets/mask/silhouettes/mask_parasauro.png" id="4_d27xw"]
 
 [resource]
 script = ExtResource("1_ok2kn")
 mouth = 1
 shape = 3
 crest = true
+SILHOUTTE_TEXTURE = ExtResource("4_d27xw")
+MOUTH_TEXTURE = ExtResource("3_53aq6")
+EMOTIONS_TEXTURES = Dictionary[int, CompressedTexture2D]({
+0: ExtResource("1_55i18"),
+1: ExtResource("2_ssh8h")
+})
 metadata/_custom_type_script = "uid://bgc5iavwvki00"

@@ -1,10 +1,18 @@
 [gd_resource type="Resource" script_class="Phenotype" format=3 uid="uid://cg5gixg40bs3s"]
 
+[ext_resource type="Texture2D" uid="uid://xpkh7bp7lado" path="res://assets/mask/faces/mask_brachio_face.png" id="1_6k0ic"]
+[ext_resource type="Texture2D" uid="uid://bb6wr5ntww1h2" path="res://assets/mask/happy/mask_brachio_happy.png" id="1_ct517"]
 [ext_resource type="Script" uid="uid://bgc5iavwvki00" path="res://scripts/phenotype.gd" id="1_f6kfb"]
+[ext_resource type="Texture2D" uid="uid://jnltxfvqhmig" path="res://assets/mask/sad/mask_brachio_sad.png" id="2_at4nt"]
+[ext_resource type="Texture2D" uid="uid://djlp4beo2i314" path="res://assets/mask/silhouettes/mask_brachio.png" id="2_ys2fg"]
 
 [resource]
 script = ExtResource("1_f6kfb")
-horns = null
 crest = true
-EMOTIONS_TEXTURES = null
+SILHOUTTE_TEXTURE = ExtResource("2_ys2fg")
+MOUTH_TEXTURE = ExtResource("1_6k0ic")
+EMOTIONS_TEXTURES = Dictionary[int, CompressedTexture2D]({
+0: ExtResource("1_ct517"),
+1: ExtResource("2_at4nt")
+})
 metadata/_custom_type_script = "uid://bgc5iavwvki00"

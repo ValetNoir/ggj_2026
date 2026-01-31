@@ -1,9 +1,21 @@
 [gd_resource type="Resource" script_class="Phenotype" format=3 uid="uid://bm7npt70grt6n"]
 
+[ext_resource type="Texture2D" uid="uid://c1a117vt1nhd5" path="res://assets/mask/happy/mask_trex_happy.png" id="1_5lite"]
 [ext_resource type="Script" uid="uid://bgc5iavwvki00" path="res://scripts/phenotype.gd" id="1_fc3yw"]
+[ext_resource type="Texture2D" uid="uid://x53428qcdool" path="res://assets/mask/sad/mask_trex_sad.png" id="2_4u0w1"]
+[ext_resource type="Texture2D" uid="uid://blkpj6v5ocbqh" path="res://assets/mask/horns/mask_trex_horn.png" id="3_7bgwv"]
+[ext_resource type="Texture2D" uid="uid://cs2ly78x4duui" path="res://assets/mask/faces/mask_trex_face.png" id="4_ekgmm"]
+[ext_resource type="Texture2D" uid="uid://hywkv5m7lror" path="res://assets/mask/silhouettes/mask_trex.png" id="5_x5fxp"]
 
 [resource]
 script = ExtResource("1_fc3yw")
 shape = 2
 horns = true
+SILHOUTTE_TEXTURE = ExtResource("5_x5fxp")
+MOUTH_TEXTURE = ExtResource("4_ekgmm")
+HORNS_TEXTURE = ExtResource("3_7bgwv")
+EMOTIONS_TEXTURES = Dictionary[int, CompressedTexture2D]({
+0: ExtResource("1_5lite"),
+1: ExtResource("2_4u0w1")
+})
 metadata/_custom_type_script = "uid://bgc5iavwvki00"

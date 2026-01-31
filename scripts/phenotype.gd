@@ -9,7 +9,10 @@ extends Resource
 @export var SILHOUTTE_TEXTURE: CompressedTexture2D = null
 @export var MOUTH_TEXTURE: CompressedTexture2D = null
 @export var HORNS_TEXTURE: CompressedTexture2D = null
-@export var EMOTIONS_TEXTURES: Dictionary[Description.Emotion, CompressedTexture2D] = {}
+@export var EMOTIONS_TEXTURES: Dictionary[Description.Emotion, CompressedTexture2D] = {
+	Description.Emotion.HAPPY : null,
+	Description.Emotion.SAD : null,
+}
 
 func _init():
 	mouth = Description.Mouth.SNOUT
