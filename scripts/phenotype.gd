@@ -1,7 +1,6 @@
 class_name Phenotype
 extends Resource
 
-@export var species: Description.Species
 @export var mouth: Description.Mouth
 @export var shape: Description.Shape
 @export var horns: bool
@@ -13,7 +12,6 @@ extends Resource
 @export var EMOTIONS_TEXTURES: Dictionary[Description.Emotion, CompressedTexture2D] = {}
 
 func _init():
-	species = Description.Species.DIPLODOCUS
 	mouth = Description.Mouth.SNOUT
 	shape = Description.Shape.PEAR
 	horns = false
