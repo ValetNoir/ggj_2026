@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://dtquddt3in2h"]
+
+[ext_resource type="Script" uid="uid://dgbfe0a7um58p" path="res://scripts/level.gd" id="1_umng4"]
+
+[resource]
+script = ExtResource("1_umng4")
+npc_count = 12
+max_similarity = 3
+metadata/_custom_type_script = "uid://dgbfe0a7um58p"
