@@ -1,62 +1,6 @@
 [gd_scene format=3 uid="uid://lx8k0nvjc1wh"]
 
-[ext_resource type="PackedScene" uid="uid://cfk2nyq8iaigf" path="res://scenes/character.tscn" id="1_um2sc"]
+[ext_resource type="Script" uid="uid://cnjay1ih1oq1d" path="res://scenes/test scenes/test_character_move.gd" id="1_um2sc"]
 
-[node name="Node2D" type="Node2D" unique_id=105150264]
-
-[node name="Character" parent="." unique_id=824456391 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character8" parent="." unique_id=378058342 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character9" parent="." unique_id=955833167 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character10" parent="." unique_id=2116309845 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character11" parent="." unique_id=1140628085 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character12" parent="." unique_id=1502427293 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character13" parent="." unique_id=1417690580 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character14" parent="." unique_id=1218049285 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character15" parent="." unique_id=884802034 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character16" parent="." unique_id=1140792276 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character17" parent="." unique_id=759926540 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character18" parent="." unique_id=1166237063 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character19" parent="." unique_id=683064391 instance=ExtResource("1_um2sc")]
-position = Vector2(484, 459)
-
-[node name="Character2" parent="." unique_id=1945655403 instance=ExtResource("1_um2sc")]
-position = Vector2(859, 400)
-
-[node name="Character3" parent="." unique_id=2045157577 instance=ExtResource("1_um2sc")]
-position = Vector2(159, 368)
-
-[node name="Character4" parent="." unique_id=592169773 instance=ExtResource("1_um2sc")]
-position = Vector2(335, 296)
-
-[node name="Character5" parent="." unique_id=339354920 instance=ExtResource("1_um2sc")]
-position = Vector2(890, 166)
-
-[node name="Character6" parent="." unique_id=1174474380 instance=ExtResource("1_um2sc")]
-position = Vector2(614, 296)
-
-[node name="Character7" parent="." unique_id=585285292 instance=ExtResource("1_um2sc")]
-position = Vector2(309, 115)
+[node name="TestCharacterMove" type="Node2D" unique_id=105150264]
+script = ExtResource("1_um2sc")
