@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bct5f5l4kl20g"
-path="res://.godot/imported/mask_diplo_spots.png-31111ca01c1c8e3c1e459c35c9558870.ctex"
+uid="uid://bstgro1jpfmoi"
+path="res://.godot/imported/masks_ceratops.png-40f3c5f960e7b326e7665a81ce8464d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mask/mask_diplo_spots.png"
-dest_files=["res://.godot/imported/mask_diplo_spots.png-31111ca01c1c8e3c1e459c35c9558870.ctex"]
+source_file="res://assets/mask/silhouettes/masks_ceratops.png"
+dest_files=["res://.godot/imported/masks_ceratops.png-40f3c5f960e7b326e7665a81ce8464d1.ctex"]
 
 [params]
 

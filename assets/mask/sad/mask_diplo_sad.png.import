@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfkc7boujnl0s"
-path="res://.godot/imported/mask_diplo_happy.png-b9b05e36afdc3055df94798b342dd2d3.ctex"
+uid="uid://cchkymblt1no6"
+path="res://.godot/imported/mask_diplo_sad.png-63f280205d4045cd95e2864c52125cef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mask/mask_diplo_happy.png"
-dest_files=["res://.godot/imported/mask_diplo_happy.png-b9b05e36afdc3055df94798b342dd2d3.ctex"]
+source_file="res://assets/mask/sad/mask_diplo_sad.png"
+dest_files=["res://.godot/imported/mask_diplo_sad.png-63f280205d4045cd95e2864c52125cef.ctex"]
 
 [params]
 

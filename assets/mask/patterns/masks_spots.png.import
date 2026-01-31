@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drb68ml7oa2sv"
-path="res://.godot/imported/mask_diplo_sad.png-c86746667dd748fdcf56e3dd7b3c23a6.ctex"
+uid="uid://cfrg4u7k7bp7u"
+path="res://.godot/imported/masks_spots.png-97229f21bfea2e99ece92774bbdcef57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mask/mask_diplo_sad.png"
-dest_files=["res://.godot/imported/mask_diplo_sad.png-c86746667dd748fdcf56e3dd7b3c23a6.ctex"]
+source_file="res://assets/mask/patterns/masks_spots.png"
+dest_files=["res://.godot/imported/masks_spots.png-97229f21bfea2e99ece92774bbdcef57.ctex"]
 
 [params]
 
