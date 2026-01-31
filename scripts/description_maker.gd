@@ -35,6 +35,20 @@ static func _make_description_from_parameters(parameters: Array[int]) -> Descrip
 	description.color = parameters[Parameters.COLOR]
 	return description
 
+static func _get_string_from_description(desc: Description) -> String:
+	var result = "[%d, %d, %d ,%d]" % [desc.species, desc.emotion, desc.pattern, desc.color]
+	
+	return result
+
+static func _make_array_from_description(description: Description) -> Array[int]:
+	var result: Array[int] = []
+	result.resize(Parameters.size())
+	result[Parameters.SPECIES] = description.species
+	result[Parameters.EMOTION] = description.emotion
+	result[Parameters.PATTERN] = description.pattern
+	result[Parameters.COLOR] = description.color
+	return result
+
 static func _generate_all_possible_parameters() -> void:
 	parameters_list.clear()
 	var current_parameters: Array[int] = []
@@ -73,5 +87,5 @@ static func _increment_parameter_array(array: Array[int]) -> void:
 static func _make_random_parameters() -> Array[int]:
 	var parameters: Array[int] = []
 	for param in Parameters.size():
-		parameters.push_back(randi_range(0, PARAM_ENUM_SIZE[param]))
+		parameters.push_back(randi_range(0, PARAM_ENUM_SIZE[param] - 1))
 	return parameters

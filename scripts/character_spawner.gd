@@ -10,6 +10,12 @@ const _spawn_margin: float = 30.0
 func _ready() -> void:
 	_spawn_rect = get_viewport_rect().grow(-1.0 * _spawn_margin)
 	DescriptionMaker.generate_descriptions(number_to_generate, max_similarity)
+	
+	var re_array: Array[Array] = []
+	for desc in DescriptionMaker.descriptions_list:
+		re_array.append(DescriptionMaker._make_array_from_description(desc))
+	print(re_array)
+	
 	spawn(DescriptionMaker.target_description)
 	for desc in DescriptionMaker.descriptions_list:
 		spawn(desc)
