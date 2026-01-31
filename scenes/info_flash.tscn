@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bvd4yyq0ee5ss"]
 
 [ext_resource type="Script" uid="uid://bdd3qi2he3si8" path="res://scripts/info_flash.gd" id="1_nw3jk"]
+[ext_resource type="Texture2D" uid="uid://d31ero2p8t5yd" path="res://assets/ui/papier_froisse.png" id="2_yonm5"]
+[ext_resource type="Theme" uid="uid://bv1c2mvbc8mml" path="res://ressources/themes/info_flash_richtext.tres" id="3_mwli1"]
 
 [node name="InfoFlash" type="Control" unique_id=1219634045]
 layout_mode = 3
@@ -9,4 +11,42 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_nw3jk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1563546629]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -268.0
+offset_right = 296.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yonm5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1828437438]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 130
+
+[node name="info_flash_richtext" type="RichTextLabel" parent="TextureRect/MarginContainer" unique_id=1386074033]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_mwli1")
+bbcode_enabled = true
+text = "This is an example"
+fit_content = true

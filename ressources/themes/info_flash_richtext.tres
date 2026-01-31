@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bv1c2mvbc8mml"]
+
+[ext_resource type="FontFile" uid="uid://m33ipl5yk6bl" path="res://ressources/fonts/Julee-Regular.ttf" id="1_fe3l8"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(0.15, 0.15, 0.15, 1)
+RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/fonts/normal_font = ExtResource("1_fe3l8")
