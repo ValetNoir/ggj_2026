@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://dtxdcvfrot2s8" path="res://ressources/levels/Level_09.tres" id="11_5newe"]
 [ext_resource type="Resource" uid="uid://dmoqaibjq630q" path="res://ressources/levels/Level_10.tres" id="12_37s47"]
 [ext_resource type="PackedScene" uid="uid://dmtg1nin4bq1" path="res://scenes/character_spawner.tscn" id="13_kvuet"]
+[ext_resource type="Texture2D" uid="uid://dbarlmfg5qyvo" path="res://assets/dance_floor/dance_floor.png" id="13_rysoc"]
 [ext_resource type="Script" uid="uid://c2nd17karykng" path="res://scripts/cheat_ui.gd" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bvd4yyq0ee5ss" path="res://scenes/info_flash.tscn" id="16_ca42v"]
@@ -20,6 +21,16 @@
 [node name="Game" type="Node2D" unique_id=607520342]
 script = ExtResource("1_uwrxv")
 levels = Array[ExtResource("2_dinhu")]([ExtResource("3_kvuet"), ExtResource("4_trtic"), ExtResource("5_ir15t"), ExtResource("6_ca42v"), ExtResource("7_rysoc"), ExtResource("8_ssvqc"), ExtResource("9_264po"), ExtResource("10_1kice"), ExtResource("11_5newe"), ExtResource("12_37s47")])
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1162958084]
+position = Vector2(960, 540)
+
+[node name="DanceFloor" type="Node2D" parent="." unique_id=1351716180]
+
+[node name="DanceFloorSprite2D" type="Sprite2D" parent="DanceFloor" unique_id=978323076]
+position = Vector2(960, 540)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_rysoc")
 
 [node name="CharacterSpawner" parent="." unique_id=1560401905 instance=ExtResource("13_kvuet")]
 
