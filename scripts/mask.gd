@@ -1,10 +1,19 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
+@export var description: Description;
+
+@onready var shape: Sprite2D = $Shape
+@onready var mouth: Sprite2D = $Mouth
+@onready var emotion: Sprite2D = $Emotion
+@onready var horns: Sprite2D = $Horns
+
 func _ready() -> void:
-	pass # Replace with function body.
+	shape.texture = description.phenotype.SILHOUTTE_TEXTURE
+	mouth.texture = description.phenotype.MOUTH_TEXTURE
+	
+	if description.phenotype.horns:
+		horns.texture = description.phenotype.HORNS_TEXTURE
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	emotion.texture = description.phenotype.EMOTIONS_TEXTURES[description.emotion]
+	shape.material.set_shader_parameter("color", description.COLORS[description.color])
+	
