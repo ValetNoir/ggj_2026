@@ -2,7 +2,7 @@ class_name Character
 extends Node2D
 
 @onready var _area: Area2D = $Area2D
-@onready var _mask: Node2D = $Mask
+@onready var _mask: Mask = $Mask
 static var _held_character: Character = null
 @export var speed: float = 100.0
 @export var description: Description = null;
@@ -95,6 +95,7 @@ func _on_area_mouse_enter() -> void:
 	if not is_instance_valid(_held_character):
 		z_index = HELD_Z_INDEX
 		_held_character = self
+		_mask.set_outline(true)
 
 func _on_area_mouse_exit() -> void:
 	if _held_character == self:
@@ -102,6 +103,7 @@ func _on_area_mouse_exit() -> void:
 		_hold_next_character()
 
 func _hold_next_character() -> void:
+	_held_character._mask.set_outline(false)
 	var mouse_position = get_viewport().get_mouse_position()
 	var query := PhysicsPointQueryParameters2D.new()
 	query.position = mouse_position
@@ -115,6 +117,7 @@ func _hold_next_character() -> void:
 		if collider.get_parent() is Character:
 			_held_character = collider.get_parent()
 			_held_character.z_index = HELD_Z_INDEX
+			_held_character._mask.set_outline(true)
 			return
 	# default case if no valid hit
 	_held_character = null
