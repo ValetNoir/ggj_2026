@@ -1,35 +1,31 @@
 [gd_scene format=3 uid="uid://bf01jl6xk7ctv"]
 
 [ext_resource type="Script" uid="uid://drossh3nlwgum" path="res://scripts/mask.gd" id="1_in0c2"]
+[ext_resource type="Script" uid="uid://57gc2nons7ou" path="res://scripts/description.gd" id="2_q5cp3"]
 [ext_resource type="Shader" uid="uid://idse4fk51kte" path="res://scripts/silhouette.gdshader" id="2_xsism"]
-[ext_resource type="Texture2D" uid="uid://cfrg4u7k7bp7u" path="res://assets/mask/patterns/masks_spots.png" id="3_0iq2y"]
-[ext_resource type="Texture2D" uid="uid://cse1xq0bthwsi" path="res://assets/mask/silhouettes/mask_diplo.png" id="4_q5cp3"]
-[ext_resource type="Texture2D" uid="uid://looj53xxxo4x" path="res://assets/mask/faces/mask_diplo_face.png" id="5_khdy1"]
-[ext_resource type="Texture2D" uid="uid://bc722unnq1ckb" path="res://assets/mask/happy/mask_diplo_happy.png" id="6_13g8o"]
 [ext_resource type="Texture2D" uid="uid://d251cfg2eop61" path="res://assets/mask/eyes/mask_eyes.png" id="7_h7770"]
-[ext_resource type="Texture2D" uid="uid://cg762054ecbu2" path="res://assets/mask/horns/masks_ceratops_horns.png" id="8_p3q4p"]
+
+[sub_resource type="Resource" id="Resource_khdy1"]
+script = ExtResource("2_q5cp3")
+metadata/_custom_type_script = "uid://57gc2nons7ou"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2a672"]
 resource_local_to_scene = true
 shader = ExtResource("2_xsism")
-shader_parameter/overlay_tex = ExtResource("3_0iq2y")
-shader_parameter/color = Vector4(0.5, 0, 1, 1)
+shader_parameter/color = Vector4(0, 0, 0, 0)
 
 [node name="Mask" type="Node2D" unique_id=1409669806]
 script = ExtResource("1_in0c2")
+description = SubResource("Resource_khdy1")
 
 [node name="Shape" type="Sprite2D" parent="." unique_id=2117661118]
 material = SubResource("ShaderMaterial_2a672")
-texture = ExtResource("4_q5cp3")
 
 [node name="Mouth" type="Sprite2D" parent="." unique_id=2006927485]
-texture = ExtResource("5_khdy1")
 
 [node name="Emotion" type="Sprite2D" parent="." unique_id=424140755]
-texture = ExtResource("6_13g8o")
 
 [node name="Eyes" type="Sprite2D" parent="." unique_id=1862056157]
 texture = ExtResource("7_h7770")
 
 [node name="Horns" type="Sprite2D" parent="." unique_id=1460204295]
-texture = ExtResource("8_p3q4p")

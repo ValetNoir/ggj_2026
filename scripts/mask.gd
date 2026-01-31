@@ -13,11 +13,12 @@ func _ready() -> void:
 	shape.texture = phenotype.SILHOUTTE_TEXTURE
 	mouth.texture = phenotype.MOUTH_TEXTURE
 	
-	if phenotype.horns:
+	if phenotype.horns and phenotype.HORNS_TEXTURE:
 		horns.texture = phenotype.HORNS_TEXTURE
 	else:
 		horns.texture = null
 
 	emotion.texture = description.get_emotion_texture()
 	shape.material.set_shader_parameter("color", description.get_color())
+	shape.material.set_shader_parameter("overlay_tex", description.get_pattern_texture())
 	

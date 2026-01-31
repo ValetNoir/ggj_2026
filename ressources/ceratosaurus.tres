@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_fc3yw")
-species = 5
 shape = 2
 horns = true
 metadata/_custom_type_script = "uid://bgc5iavwvki00"

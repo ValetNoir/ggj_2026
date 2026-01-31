@@ -59,6 +59,9 @@ func get_phenotype() -> Phenotype:
 
 func get_emotion_texture() -> CompressedTexture2D:
 	return get_phenotype().EMOTIONS_TEXTURES[emotion]
+	
+func get_pattern_texture() -> CompressedTexture2D:
+	return PATTERN_TEXTURES[pattern]
 
 func get_color() -> Color:
 	return COLORS[color]

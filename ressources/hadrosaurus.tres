@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_ou7yp")
-species = 6
 mouth = 1
 shape = 3
 metadata/_custom_type_script = "uid://bgc5iavwvki00"
