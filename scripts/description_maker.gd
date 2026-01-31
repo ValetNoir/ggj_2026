@@ -15,9 +15,8 @@ static var parameters_list: Array[Array] = []
 static var descriptions_list: Array[Description] = []
 
 static func generate_descriptions(count: int, max_similarities: int) -> void:
-	if not is_instance_valid(target_description):
-		target_parameters = _make_random_parameters()
-		target_description = _make_description_from_parameters(target_parameters)
+	target_parameters = _make_random_parameters()
+	target_description = _make_description_from_parameters(target_parameters)
 	_generate_all_possible_parameters()
 	_filter_parameters_list(max_similarities)
 	parameters_list.shuffle()

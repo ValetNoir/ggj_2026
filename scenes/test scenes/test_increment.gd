@@ -3,10 +3,10 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DescriptionMaker.generate_descriptions(20, 0)
+	DescriptionMaker.generate_descriptions(100, 1)
 	
 	var similarities: int = 1
-	DescriptionMaker._filter_parameters_list(1)
+
 	print(DescriptionMaker.parameters_list)
 	print("Possible combinations: ", DescriptionMaker.descriptions_list.size())
 	print("target: ", DescriptionMaker.target_parameters)
