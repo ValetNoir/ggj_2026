@@ -1,14 +1,25 @@
 [gd_scene format=3 uid="uid://b6k3bul7hs57g"]
 
 [ext_resource type="Script" uid="uid://bj4oldus8rkuj" path="res://scripts/character.gd" id="1_rkhd4"]
-[ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://assets/icon.svg" id="2_lrhn5"]
+[ext_resource type="Texture2D" uid="uid://cxe2jitsctgpy" path="res://assets/bodies/body_01.png" id="2_lrhn5"]
 [ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="3_lrhn5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my7n2"]
+atlas = ExtResource("2_lrhn5")
+region = Rect2(0, 0, 900, 1490)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp8ca"]
+atlas = ExtResource("2_lrhn5")
+region = Rect2(900, 0, 900, 1490)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lrhn5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_lrhn5")
+"texture": SubResource("AtlasTexture_my7n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp8ca")
 }],
 "loop": true,
 "name": &"default",
@@ -22,7 +33,10 @@ size = Vector2(130, 128)
 script = ExtResource("1_rkhd4")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=103487943]
+position = Vector2(0, 89.00001)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_lrhn5")
+autoplay = "default"
 
 [node name="Mask" parent="." unique_id=1409669806 instance=ExtResource("3_lrhn5")]
 scale = Vector2(0.1, 0.1)

@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dmtg1nin4bq1" path="res://scenes/character_spawner.tscn" id="13_kvuet"]
 [ext_resource type="Script" uid="uid://c2nd17karykng" path="res://scripts/cheat_ui.gd" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://bvd4yyq0ee5ss" path="res://scenes/info_flash.tscn" id="16_ca42v"]
 
 [node name="Game" type="Node2D" unique_id=607520342]
 script = ExtResource("1_uwrxv")
@@ -42,6 +43,11 @@ text = "Current level:"
 [node name="Button" type="Button" parent="CheatUI" unique_id=1672822306]
 layout_mode = 2
 text = "Next Level"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1744711347]
+
+[node name="InfoFlash" parent="CanvasLayer" unique_id=1219634045 instance=ExtResource("16_ca42v")]
+unique_name_in_owner = true
 
 [connection signal="level_loaded" from="." to="CheatUI" method="on_level_loaded"]
 [connection signal="pressed" from="CheatUI/Button" to="." method="next_level"]
