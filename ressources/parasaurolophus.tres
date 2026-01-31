@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_ok2kn")
-species = 7
 mouth = 1
 shape = 3
 crest = true

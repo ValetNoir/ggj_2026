@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_f6kfb")
-species = 1
+horns = null
 crest = true
+EMOTIONS_TEXTURES = null
 metadata/_custom_type_script = "uid://bgc5iavwvki00"

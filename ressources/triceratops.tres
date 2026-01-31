@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_lsk2s")
-species = 2
 mouth = 1
 horns = true
 metadata/_custom_type_script = "uid://bgc5iavwvki00"
