@@ -3,16 +3,20 @@
 [ext_resource type="Script" uid="uid://drossh3nlwgum" path="res://scripts/mask.gd" id="1_in0c2"]
 [ext_resource type="Script" uid="uid://57gc2nons7ou" path="res://scripts/description.gd" id="2_q5cp3"]
 [ext_resource type="Shader" uid="uid://idse4fk51kte" path="res://scripts/silhouette.gdshader" id="2_xsism"]
-[ext_resource type="Texture2D" uid="uid://d251cfg2eop61" path="res://assets/mask/eyes/mask_eyes.png" id="7_h7770"]
+[ext_resource type="Texture2D" uid="uid://d251cfg2eop61" path="res://assets/mask/mask_eyes.png" id="7_h7770"]
 
 [sub_resource type="Resource" id="Resource_khdy1"]
 script = ExtResource("2_q5cp3")
+pattern = 1
 metadata/_custom_type_script = "uid://57gc2nons7ou"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2a672"]
 resource_local_to_scene = true
 shader = ExtResource("2_xsism")
-shader_parameter/color = Vector4(0, 0, 0, 0)
+shader_parameter/outline_thickness = 20.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/is_outline_on = false
+shader_parameter/mask_color = Vector4(0, 0, 0, 0)
 
 [node name="Mask" type="Node2D" unique_id=1409669806]
 script = ExtResource("1_in0c2")

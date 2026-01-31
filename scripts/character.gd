@@ -2,8 +2,10 @@ class_name Character
 extends Node2D
 
 @onready var _area: Area2D = $Area2D
+@onready var _mask: Node2D = $Mask
 static var _held_character: Character = null
 @export var speed: float = 100.0
+@export var description: Description = null;
 var _destination: Vector2 = Vector2.ZERO
 var _is_moving: bool = false
 var _valid_rect: Rect2 = Rect2()
@@ -18,6 +20,7 @@ const HELD_Z_INDEX: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_mask.description = description
 	_valid_rect = get_viewport_rect().grow(-30.0)
 	get_tree().create_timer(randf_range(MIN_START_DELAY, MAX_START_DELAY))\
 		.timeout.connect(_start_move)

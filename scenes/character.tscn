@@ -2,6 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bj4oldus8rkuj" path="res://scripts/character.gd" id="1_rkhd4"]
 [ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://assets/icon.svg" id="2_lrhn5"]
+[ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="3_lrhn5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrhn5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lrhn5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_my7n2"]
 size = Vector2(130, 128)
@@ -9,8 +21,11 @@ size = Vector2(130, 128)
 [node name="Character" type="Node2D" unique_id=824456391]
 script = ExtResource("1_rkhd4")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1657750260]
-texture = ExtResource("2_lrhn5")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=103487943]
+sprite_frames = SubResource("SpriteFrames_lrhn5")
+
+[node name="Mask" parent="." unique_id=1409669806 instance=ExtResource("3_lrhn5")]
+scale = Vector2(0.1, 0.1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=810358447]
 
