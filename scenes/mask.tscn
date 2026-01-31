@@ -10,7 +10,7 @@
 resource_local_to_scene = true
 shader = ExtResource("2_xsism")
 shader_parameter/overlay_tex = ExtResource("3_2a672")
-shader_parameter/scale = 0.056
+shader_parameter/scale = 1.0
 shader_parameter/color = Vector4(0.5, 0, 1, 1)
 
 [node name="Mask" type="Node2D" unique_id=1409669806]
