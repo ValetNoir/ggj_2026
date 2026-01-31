@@ -28,7 +28,7 @@ enum Shape { PEAR, FRILL, CARNIVORE, DUCKBILL, EGG }
 
 const PATTERN_TEXTURES: Dictionary[Pattern, CompressedTexture2D] = {
 	Pattern.NONE : preload("uid://d3v8eynat77lb"),
-	Pattern.DOTS : preload("uid://d3v8eynat77lb"),
+	Pattern.DOTS : preload("uid://cfrg4u7k7bp7u"),
 	Pattern.FEATHERS : preload("uid://d3v8eynat77lb"),
 };
 const COLORS: Dictionary[MaskColor, Color] = {
