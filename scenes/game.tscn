@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://rlv0umd7rnq7"]
+
+[ext_resource type="Script" uid="uid://mmlhjkrax86p" path="res://scripts/game.gd" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://dgbfe0a7um58p" path="res://scripts/level.gd" id="2_dinhu"]
+[ext_resource type="Resource" uid="uid://bg5oo5ufyg4tt" path="res://ressources/levels/Level_01.tres" id="3_kvuet"]
+[ext_resource type="Resource" uid="uid://cdtuk68hjrbrp" path="res://ressources/levels/Level_02.tres" id="4_trtic"]
+[ext_resource type="Resource" uid="uid://mpwrgmhuajkv" path="res://ressources/levels/Level_03.tres" id="5_ir15t"]
+[ext_resource type="Resource" uid="uid://n5i6rfjjq66n" path="res://ressources/levels/Level_04.tres" id="6_ca42v"]
+[ext_resource type="Resource" uid="uid://dtquddt3in2h" path="res://ressources/levels/Level_05.tres" id="7_rysoc"]
+[ext_resource type="Resource" uid="uid://dpw8ll42ak1n3" path="res://ressources/levels/Level_06.tres" id="8_ssvqc"]
+[ext_resource type="Resource" uid="uid://bqfv8ft6wtg1u" path="res://ressources/levels/Level_07.tres" id="9_264po"]
+[ext_resource type="Resource" uid="uid://bw3mxnl7w0jk4" path="res://ressources/levels/Level_08.tres" id="10_1kice"]
+[ext_resource type="Resource" uid="uid://dtxdcvfrot2s8" path="res://ressources/levels/Level_09.tres" id="11_5newe"]
+[ext_resource type="Resource" uid="uid://dmoqaibjq630q" path="res://ressources/levels/Level_10.tres" id="12_37s47"]
+[ext_resource type="PackedScene" uid="uid://dmtg1nin4bq1" path="res://scenes/character_spawner.tscn" id="13_kvuet"]
+[ext_resource type="Script" uid="uid://c2nd17karykng" path="res://scripts/cheat_ui.gd" id="14_trtic"]
+[ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="15_ir15t"]
+
+[node name="Game" type="Node2D" unique_id=607520342]
+script = ExtResource("1_uwrxv")
+levels = Array[ExtResource("2_dinhu")]([ExtResource("3_kvuet"), ExtResource("4_trtic"), ExtResource("5_ir15t"), ExtResource("6_ca42v"), ExtResource("7_rysoc"), ExtResource("8_ssvqc"), ExtResource("9_264po"), ExtResource("10_1kice"), ExtResource("11_5newe"), ExtResource("12_37s47")])
+
+[node name="CharacterSpawner" parent="." unique_id=1560401905 instance=ExtResource("13_kvuet")]
+
+[node name="CheatUI" type="HBoxContainer" parent="." unique_id=1033743999]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_trtic")
+
+[node name="Panel" type="Panel" parent="CheatUI" unique_id=1876922649]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Mask" parent="CheatUI/Panel" unique_id=1409669806 instance=ExtResource("15_ir15t")]
+position = Vector2(50, 50)
+scale = Vector2(0.1, 0.1)
+
+[node name="Label" type="Label" parent="CheatUI" unique_id=1398786224]
+layout_mode = 2
+text = "Current level:"
+
+[node name="Button" type="Button" parent="CheatUI" unique_id=1672822306]
+layout_mode = 2
+text = "Next Level"
+
+[connection signal="level_loaded" from="." to="CheatUI" method="on_level_loaded"]
+[connection signal="pressed" from="CheatUI/Button" to="." method="next_level"]

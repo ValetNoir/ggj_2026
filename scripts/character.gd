@@ -16,6 +16,7 @@ const MIN_START_DELAY: float = 0.1
 const MAX_START_DELAY: float = 1.5
 const NORMAL_Z_INDEX: int = 0
 const HELD_Z_INDEX: int = 1
+signal character_clicked(Description)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -126,3 +127,4 @@ func _on_area_2d_input_event(viewport: Viewport, event: InputEvent, shape_idx: i
 	if event is InputEventMouseButton and event.is_pressed():
 		print("clicked %s", name)
 		viewport.set_input_as_handled()
+		character_clicked.emit(_mask.description)
