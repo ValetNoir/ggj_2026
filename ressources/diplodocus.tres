@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Phenotype" format=3 uid="uid://celuv2kf4o7sn"]
+
+[ext_resource type="Script" uid="uid://bgc5iavwvki00" path="res://scripts/phenotype.gd" id="1_blyqj"]
+
+[resource]
+script = ExtResource("1_blyqj")
+metadata/_custom_type_script = "uid://bgc5iavwvki00"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Phenotype" format=3 uid="uid://bypngs0p73xle"]
+
+[ext_resource type="Script" uid="uid://bgc5iavwvki00" path="res://scripts/phenotype.gd" id="1_wp0dl"]
+
+[resource]
+script = ExtResource("1_wp0dl")
+species = 8
+mouth = 1
+shape = 4
+crest = true
+metadata/_custom_type_script = "uid://bgc5iavwvki00"
