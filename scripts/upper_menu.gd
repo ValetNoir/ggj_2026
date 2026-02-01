@@ -12,10 +12,22 @@ func _ready():
 func reset():
 	for child in heart_container.get_children():
 		if child is TextureRect:
-			child.texture = heart_container
+			child.texture = intact_heart_texture
 
 func strike():
-	for child in heart_container.get_children():
+	var array: Array = heart_container.get_children()
+	array.reverse()
+	for child in array:
 		if child is TextureRect and child.texture == intact_heart_texture:
-			child.texture == broken_heart_texture
+			child.texture = broken_heart_texture
+			SignalBus.play_sfx.emit(SignalBus.SFX.STRIKE_WRONG)
+			return
+
+func gain_life():
+	var array: Array = heart_container.get_children()
+	array.reverse()
+	for child in array:
+		if child is TextureRect and child.texture == broken_heart_texture:
+			child.texture = intact_heart_texture
+			SignalBus.play_sfx.emit(SignalBus.SFX.STRIKE_CORRECT)
 			return
