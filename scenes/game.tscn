@@ -36,17 +36,10 @@
 [ext_resource type="LabelSettings" uid="uid://dqpe5etala8ng" path="res://ressources/themes/game_over_label.tres" id="31_js0lu"]
 [ext_resource type="Texture2D" uid="uid://ba0rumcrnfl2m" path="res://assets/ui/DiscoSaurusTrans-Large.png" id="32_02fa5"]
 [ext_resource type="Texture2D" uid="uid://d31ero2p8t5yd" path="res://assets/ui/papier_froisse.png" id="32_gxtfn"]
-[ext_resource type="FontFile" uid="uid://m33ipl5yk6bl" path="res://ressources/fonts/Julee-Regular.ttf" id="32_twgab"]
 [ext_resource type="Theme" uid="uid://cogfif33ae5ro" path="res://ressources/themes/button_theme.tres" id="33_nepv3"]
 [ext_resource type="PackedScene" uid="uid://bpjlypaco6u3g" path="res://scenes/audio_manager.tscn" id="35_gxtfn"]
 
 [sub_resource type="Theme" id="Theme_qouja"]
-
-[sub_resource type="Theme" id="Theme_js0lu"]
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/constants/outline_size = 12
-Button/font_sizes/font_size = 80
-Button/fonts/font = ExtResource("32_twgab")
 
 [node name="Game" type="Node2D" unique_id=607520342]
 script = ExtResource("1_uwrxv")
@@ -100,7 +93,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 script = ExtResource("29_02fa5")
 
 [node name="Lore" type="Control" parent="CanvasLayer/VictoryMenu" unique_id=365852933]
@@ -154,6 +146,23 @@ Ghislain, Aeropulu, Railnof and valet_noir
 fit_content = true
 horizontal_alignment = 1
 
+[node name="RetryButton" type="Button" parent="CanvasLayer/VictoryMenu" unique_id=1578321215]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = 317.0
+offset_right = 316.0
+offset_bottom = 434.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("33_nepv3")
+text = "Retry"
+
 [node name="GameOverMenu" type="Control" parent="CanvasLayer" unique_id=1071824556]
 unique_name_in_owner = true
 visible = false
@@ -163,7 +172,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 
 [node name="GameOverLabel" type="Label" parent="CanvasLayer/GameOverMenu" unique_id=1351282722]
 layout_mode = 1
@@ -324,8 +332,12 @@ scale = Vector2(0.2, 0.2)
 
 [node name="AudioManager" parent="." unique_id=1128192510 instance=ExtResource("35_gxtfn")]
 
+[node name="GameTimer" type="Timer" parent="." unique_id=118495673]
+unique_name_in_owner = true
+
 [connection signal="level_loaded" from="." to="CanvasLayer/InfoFlash/LevelCounter" method="update_level_text"]
 [connection signal="level_loaded" from="." to="CanvasLayer/CheatUI" method="on_level_loaded"]
+[connection signal="pressed" from="CanvasLayer/VictoryMenu/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOverMenu/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleMenu/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CheatUI/Button" to="." method="next_level"]

@@ -31,7 +31,8 @@ func reset():
 
 	var title_tween = get_tree().create_tween()
 	title_tween.tween_property(title_texture_rect, "modulate", Color.TRANSPARENT, 1.0)
-	title_tween.tween_callback(title_menu.hide)	game_timer.start(1000000)
+	title_tween.tween_callback(title_menu.hide)
+	game_timer.start(1000000)
 	mistake_counter = 0;	current_life = max_life
 	current_level_index = 0
 	upper_menu.reset()
