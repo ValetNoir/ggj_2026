@@ -32,8 +32,9 @@ func display_info(duration: float):
 	await tween2.finished
 
 func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		pass
+	if visible and (event is InputEventMouseButton or event is InputEventKey):
+		timer.stop()
+		timer.timeout.emit()
 
 func _process(_delta: float) -> void:
 	timer_label.text = str(snapped(timer.time_left, 0.1)) + "s"

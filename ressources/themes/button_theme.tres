@@ -1,0 +1,36 @@
+[gd_resource type="Theme" format=3 uid="uid://cogfif33ae5ro"]
+
+[ext_resource type="FontFile" uid="uid://dv7lwcbqm61iw" path="res://ressources/fonts/BagelFatOne-Regular.ttf" id="1_oram0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oram0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oram0"]
+bg_color = Color(0.81960785, 0.12156863, 0.12156863, 0.5411765)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bub8q"]
+bg_color = Color(0.32156864, 0, 0, 0.62352943)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnjnc"]
+bg_color = Color(0.84, 0.504, 0.504, 0.827451)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[resource]
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 12
+Button/font_sizes/font_size = 80
+Button/fonts/font = ExtResource("1_oram0")
+Button/styles/focus = SubResource("StyleBoxEmpty_oram0")
+Button/styles/hover = SubResource("StyleBoxFlat_oram0")
+Button/styles/normal = SubResource("StyleBoxFlat_bub8q")
+Button/styles/pressed = SubResource("StyleBoxFlat_nnjnc")

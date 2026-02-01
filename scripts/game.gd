@@ -12,6 +12,7 @@ extends Node2D
 @onready var victory_menu: Control = %VictoryMenu
 @onready var title_menu: Control = %TitleMenu
 @onready var lore: Control = %Lore
+@onready var title_texture_rect: TextureRect = %TitleTextureRect
 @onready var game_timer: Timer = %GameTimer
 
 var mistake_counter = 0
@@ -27,10 +28,11 @@ var current_life: int
 var current_state: STATE = STATE.LORE_ON
 
 func reset():
-	game_timer.start(1000000)
-	mistake_counter = 0;
-	title_menu.hide()
-	current_life = max_life
+
+	var title_tween = get_tree().create_tween()
+	title_tween.tween_property(title_texture_rect, "modulate", Color.TRANSPARENT, 1.0)
+	title_tween.tween_callback(title_menu.hide)	game_timer.start(1000000)
+	mistake_counter = 0;	current_life = max_life
 	current_level_index = 0
 	upper_menu.reset()
 	load_level(current_level_index)
@@ -38,6 +40,7 @@ func reset():
 	SignalBus.play_sfx.emit(SignalBus.SFX.CROWD)
 
 func _ready() -> void:
+	title_texture_rect.modulate = Color.TRANSPARENT
 	show_title_menu()
 	character_spawner.target_found.connect(_on_target_found)
 	character_spawner.wrong_character_clicked.connect(_on_wrong_target)
@@ -47,6 +50,8 @@ func _unhandled_input(event):
 		current_state = STATE.LORE_OFF
 		var tween = get_tree().create_tween()
 		tween.tween_property(lore, "modulate", Color.TRANSPARENT, 1.0)
+		var title_tween = get_tree().create_tween()
+		title_tween.tween_property(title_texture_rect, "modulate", Color.WHITE, 1.0)
 
 func load_level(level: int) -> void:
 	assert(level >= 0 and level < levels.size(), "Invalid level: %d" % level)
