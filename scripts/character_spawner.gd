@@ -8,6 +8,7 @@ var _spawn_rect: Rect2 = Rect2()
 const _spawn_margin: float = 30.0
 
 signal target_found
+signal wrong_character_clicked
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,3 +52,5 @@ func spawn(description: Description) -> void:
 func _on_character_clicked(desc: Description) -> void:
 	if desc == DescriptionMaker.target_description:
 		target_found.emit()
+	else:
+		wrong_character_clicked.emit()
