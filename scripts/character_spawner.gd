@@ -13,16 +13,6 @@ signal wrong_character_clicked
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_spawn_rect = get_viewport_rect().grow(-1.0 * _spawn_margin)
-	#DescriptionMaker.generate_descriptions(number_to_generate, max_similarity)
-	#
-	#var re_array: Array[Array] = []
-	#for desc in DescriptionMaker.descriptions_list:
-		#re_array.append(DescriptionMaker._make_array_from_description(desc))
-	#print(re_array)
-	#
-	#spawn(DescriptionMaker.target_description)
-	#for desc in DescriptionMaker.descriptions_list:
-		#spawn(desc)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
