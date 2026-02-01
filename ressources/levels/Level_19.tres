@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://cbms30bucsbpy"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_apo4h"]
+
+[resource]
+script = ExtResource("1_apo4h")
+npc_count = 45
+max_similarity = 3
+clue_duration = 1.5

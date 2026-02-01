@@ -4,5 +4,5 @@
 
 [resource]
 RichTextLabel/colors/default_color = Color(0.15, 0.15, 0.15, 1)
-RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/font_sizes/normal_font_size = 48
 RichTextLabel/fonts/normal_font = ExtResource("1_fe3l8")

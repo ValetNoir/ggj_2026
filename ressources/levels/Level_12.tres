@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://w8m0and4ilb1"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_laksp"]
+
+[resource]
+script = ExtResource("1_laksp")
+npc_count = 25
+max_similarity = 3
+clue_duration = 2.5

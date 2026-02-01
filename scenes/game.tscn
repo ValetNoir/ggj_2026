@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bidomgm7ctimo"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://mmlhjkrax86p" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="2_dinhu"]
 [ext_resource type="Resource" uid="uid://bg5oo5ufyg4tt" path="res://ressources/levels/Level_01.tres" id="3_kvuet"]
 [ext_resource type="Resource" uid="uid://cdtuk68hjrbrp" path="res://ressources/levels/Level_02.tres" id="4_trtic"]
@@ -13,14 +13,24 @@
 [ext_resource type="Resource" uid="uid://dtxdcvfrot2s8" path="res://ressources/levels/Level_09.tres" id="11_5newe"]
 [ext_resource type="Resource" uid="uid://dmoqaibjq630q" path="res://ressources/levels/Level_10.tres" id="12_37s47"]
 [ext_resource type="PackedScene" uid="uid://gwao08t8bd7k" path="res://scenes/character_spawner.tscn" id="13_kvuet"]
+[ext_resource type="Resource" uid="uid://bor17ybdjxdbg" path="res://ressources/levels/Level_11.tres" id="13_qnb83"]
 [ext_resource type="Texture2D" uid="uid://dbarlmfg5qyvo" path="res://assets/dance_floor/dance_floor.png" id="13_rysoc"]
+[ext_resource type="Resource" uid="uid://w8m0and4ilb1" path="res://ressources/levels/Level_12.tres" id="14_sww3w"]
 [ext_resource type="Script" path="res://scripts/cheat_ui.gd" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="15_ir15t"]
+[ext_resource type="Resource" uid="uid://bd50wc4eyi54s" path="res://ressources/levels/Level_13.tres" id="15_suyxu"]
 [ext_resource type="PackedScene" uid="uid://bvd4yyq0ee5ss" path="res://scenes/info_flash.tscn" id="16_ca42v"]
+[ext_resource type="Resource" uid="uid://cqai6mpfuip2q" path="res://ressources/levels/Level_14.tres" id="16_sgl2t"]
+[ext_resource type="Resource" uid="uid://culci02rvft0q" path="res://ressources/levels/Level_15.tres" id="17_qouja"]
+[ext_resource type="Resource" uid="uid://brm7ma0khlv8o" path="res://ressources/levels/Level_16.tres" id="18_wljb1"]
+[ext_resource type="Resource" uid="uid://c2jby6584or6p" path="res://ressources/levels/Level_17.tres" id="19_v2yb1"]
+[ext_resource type="Resource" uid="uid://bm1k6fly6ak3c" path="res://ressources/levels/Level_18.tres" id="20_js0lu"]
+[ext_resource type="Resource" uid="uid://cbms30bucsbpy" path="res://ressources/levels/Level_19.tres" id="21_gxtfn"]
+[ext_resource type="Resource" uid="uid://b6poouwkkioih" path="res://ressources/levels/Level_20.tres" id="22_twgab"]
 
 [node name="Game" type="Node2D" unique_id=607520342]
 script = ExtResource("1_uwrxv")
-levels = Array[ExtResource("2_dinhu")]([ExtResource("3_kvuet"), ExtResource("4_trtic"), ExtResource("5_ir15t"), ExtResource("6_ca42v"), ExtResource("7_rysoc"), ExtResource("8_ssvqc"), ExtResource("9_264po"), ExtResource("10_1kice"), ExtResource("11_5newe"), ExtResource("12_37s47")])
+levels = Array[ExtResource("2_dinhu")]([ExtResource("3_kvuet"), ExtResource("4_trtic"), ExtResource("5_ir15t"), ExtResource("6_ca42v"), ExtResource("7_rysoc"), ExtResource("8_ssvqc"), ExtResource("9_264po"), ExtResource("10_1kice"), ExtResource("11_5newe"), ExtResource("12_37s47"), ExtResource("13_qnb83"), ExtResource("14_sww3w"), ExtResource("15_suyxu"), ExtResource("16_sgl2t"), ExtResource("17_qouja"), ExtResource("18_wljb1"), ExtResource("19_v2yb1"), ExtResource("20_js0lu"), ExtResource("21_gxtfn"), ExtResource("22_twgab")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1162958084]
 position = Vector2(960, 540)
@@ -60,6 +70,7 @@ text = "Next Level"
 
 [node name="InfoFlash" parent="CanvasLayer" unique_id=1219634045 instance=ExtResource("16_ca42v")]
 unique_name_in_owner = true
+visible = false
 
 [connection signal="level_loaded" from="." to="CheatUI" method="on_level_loaded"]
 [connection signal="pressed" from="CheatUI/Button" to="." method="next_level"]

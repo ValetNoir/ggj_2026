@@ -1,10 +1,9 @@
 [gd_resource type="Resource" script_class="Level" format=3 uid="uid://bw3mxnl7w0jk4"]
 
-[ext_resource type="Script" uid="uid://dgbfe0a7um58p" path="res://scripts/level.gd" id="1_6a3jd"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_6a3jd"]
 
 [resource]
 script = ExtResource("1_6a3jd")
 npc_count = 16
 max_similarity = 3
-clue_duration = 4.0
-metadata/_custom_type_script = "uid://dgbfe0a7um58p"
+clue_duration = 3.5

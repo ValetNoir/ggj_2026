@@ -2,17 +2,30 @@ class_name InfoFlash
 extends Control
 
 @onready var info_flash_richtext: RichTextLabel = %info_flash_richtext
+@onready var timer_label: RichTextLabel = $TimerLabel
+@onready var timer: Timer = $Timer
 
 # Call this method to display the info flash for 'duration'
 func on_new_level_diplay_info_flash(duration: float):
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.3).timeout
 	set_description(DescriptionMaker.target_description)
-	modulate = Color.WHITE
+	var offset = Vector2(0, get_viewport_rect().size.y)
+	position = offset;
 	show()
-	await get_tree().create_timer(duration).timeout
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, 'modulate', Color.TRANSPARENT, 1.0)
-	tween.tween_callback(hide)
+	var tween1 = get_tree().create_tween()
+	tween1.tween_property(self, 'position', Vector2.ZERO, 2.0)
+	await tween1.finished
+	timer_label.show()
+	timer.wait_time = duration
+	timer.start()
+	await timer.timeout
+	timer_label.hide()
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(self, 'position', offset, 2.0)
+	tween2.tween_callback(hide)
+
+func _process(delta: float) -> void:
+	timer_label.text = str(snapped(timer.time_left, 0.1)) + "s"
 
 func set_description(description: Description):
 	var text: String

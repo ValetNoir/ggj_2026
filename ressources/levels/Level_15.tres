@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://culci02rvft0q"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_swmqu"]
+
+[resource]
+script = ExtResource("1_swmqu")
+npc_count = 35
+max_similarity = 3
+clue_duration = 2.0

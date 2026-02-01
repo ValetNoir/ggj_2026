@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://bor17ybdjxdbg"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_5ethn"]
+
+[resource]
+script = ExtResource("1_5ethn")
+npc_count = 22
+max_similarity = 3
+clue_duration = 3.0
