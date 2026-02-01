@@ -63,13 +63,16 @@ func _reflect_destination(destination: Vector2) -> Vector2:
 	return destination
 
 func _get_move_direction() -> Vector2:
-	var average: Vector2 = _get_average_of_overlaps_positions()
-	var direction: Vector2 = Vector2.ZERO
-	if (average.is_equal_approx(Vector2.ZERO)):
-		direction = _random_vector2_on_unit_circle()
-	else:
-		direction = (global_position - average).normalized()
-	return direction
+	
+	return _random_vector2_on_unit_circle()
+	#var average: Vector2 = _get_average_of_overlaps_positions()
+	#average = Vector2.ZERO
+	#var direction: Vector2 = Vector2.ZERO
+	#if (average.is_equal_approx(Vector2.ZERO)):
+		#direction = _random_vector2_on_unit_circle()
+	#else:
+		#direction = (global_position - average).normalized()
+	#return direction
 	
 func _random_vector2_on_unit_circle() -> Vector2:
 	return Vector2.RIGHT.rotated(randf_range(0, TAU))
