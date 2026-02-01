@@ -349,8 +349,8 @@ scale = Vector2(0.2, 0.2)
 
 [node name="AudioManager" parent="." unique_id=1128192510 instance=ExtResource("35_gxtfn")]
 
-[connection signal="level_loaded" from="." to="CanvasLayer/CheatUI" method="on_level_loaded"]
 [connection signal="level_loaded" from="." to="CanvasLayer/InfoFlash/LevelCounter" method="update_level_text"]
+[connection signal="level_loaded" from="." to="CanvasLayer/CheatUI" method="on_level_loaded"]
 [connection signal="pressed" from="CanvasLayer/GameOverMenu/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleMenu/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CheatUI/Button" to="." method="next_level"]

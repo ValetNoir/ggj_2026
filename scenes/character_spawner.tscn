@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dmtg1nin4bq1"]
 
 [ext_resource type="Script" uid="uid://cdf4cif1bhn1m" path="res://scripts/character_spawner.gd" id="1_ivvri"]
+[ext_resource type="SpriteFrames" uid="uid://c14akn1u7amqn" path="res://ressources/spriteframes/body1_sprite_frames.tres" id="2_jyac3"]
+[ext_resource type="SpriteFrames" uid="uid://cnemgve4ldokp" path="res://ressources/spriteframes/body2_sprite_frames.tres" id="3_6pele"]
+[ext_resource type="SpriteFrames" uid="uid://c1t7df0pc8o0v" path="res://ressources/spriteframes/body3_sprite_frames.tres" id="4_s2c8u"]
+[ext_resource type="SpriteFrames" uid="uid://c26j3litvufp2" path="res://ressources/spriteframes/body4_sprite_frames.tres" id="5_33e2j"]
 
 [node name="CharacterSpawner" type="Node2D" unique_id=1560401905]
 script = ExtResource("1_ivvri")
+character_spriteframes = Array[SpriteFrames]([ExtResource("2_jyac3"), ExtResource("3_6pele"), ExtResource("4_s2c8u"), ExtResource("5_33e2j")])

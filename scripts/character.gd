@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var _area: Area2D = $Area2D
 @onready var _mask: Mask = $Mask
+@onready var animated_sprite_2d: AnimatedSprite2D = $Sprite2D
 static var _held_character: Character = null
 @export var speed: float = 100.0
 var _destination: Vector2 = Vector2.ZERO
@@ -94,6 +95,10 @@ func _on_area_mouse_exit() -> void:
 	if _held_character == self:
 		z_index = NORMAL_Z_INDEX
 		_hold_next_character()
+
+func _set_character_spriteframe(spriteframe: SpriteFrames):
+	animated_sprite_2d.sprite_frames = spriteframe
+	animated_sprite_2d.play()
 
 func _hold_next_character() -> void:
 	_held_character._mask.set_outline(false)
