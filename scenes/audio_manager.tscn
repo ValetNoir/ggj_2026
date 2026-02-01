@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bpjlypaco6u3g"]
+
+[ext_resource type="Script" uid="uid://d3648r2ya3lbf" path="res://scripts/audio_manager.gd" id="1_8qd8g"]
+[ext_resource type="AudioStream" uid="uid://d4jefqrkd1jgi" path="res://assets/audio/music/GGJ - Dino ingame b.ogg" id="2_3asnw"]
+[ext_resource type="AudioStream" uid="uid://up8t328l2tw8" path="res://assets/audio/music/GGJ - Dino ingame.ogg" id="3_m6ggh"]
+[ext_resource type="AudioStream" uid="uid://dkfvqg3w52f5p" path="res://assets/audio/sfx/Target-Voiceline1.wav" id="4_njtn3"]
+[ext_resource type="AudioStream" uid="uid://dhoywdiloey0b" path="res://assets/audio/sfx/Target-Voiceline2.wav" id="5_kq7b2"]
+[ext_resource type="AudioStream" uid="uid://c81jmia16002g" path="res://assets/audio/sfx/Target-Voiceline3.wav" id="6_02gw7"]
+[ext_resource type="AudioStream" uid="uid://c8qim6dbd4f7r" path="res://assets/audio/sfx/PNJ-Voiceline1.wav" id="7_064dn"]
+[ext_resource type="AudioStream" uid="uid://3ejcg7lix34l" path="res://assets/audio/sfx/PNJ-Voiceline2.wav" id="8_ic5jq"]
+[ext_resource type="AudioStream" uid="uid://b12fxfh8rtl2i" path="res://assets/audio/sfx/PNJ-Voiceline3.wav" id="9_if78k"]
+[ext_resource type="AudioStream" uid="uid://c7oud3fx637bu" path="res://assets/audio/sfx/PNJ-Voiceline4.wav" id="10_8igv3"]
+[ext_resource type="AudioStream" uid="uid://ba121b6a34gbu" path="res://assets/audio/sfx/Strike-Gain.wav" id="11_ic5jq"]
+[ext_resource type="AudioStream" uid="uid://b06pvrnde67n6" path="res://assets/audio/sfx/Strike-Lose.wav" id="12_if78k"]
+[ext_resource type="AudioStream" uid="uid://bys5nyidhh3v8" path="res://assets/audio/sfx/Hint-Opening.wav" id="13_oucy0"]
+[ext_resource type="AudioStream" uid="uid://cqqv72dktrg51" path="res://assets/audio/sfx/Crowd-Ambient-Loop.wav" id="14_cuol6"]
+[ext_resource type="AudioStream" uid="uid://dxpjiy5uhq8jm" path="res://assets/audio/sfx/Curtains-Open.wav" id="15_m1k83"]
+[ext_resource type="AudioStream" uid="uid://b8b4okvnow2p0" path="res://assets/audio/sfx/Curtains-Close.wav" id="16_oummu"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujhup"]
+streams_count = 3
+stream_0/stream = ExtResource("4_njtn3")
+stream_1/stream = ExtResource("5_kq7b2")
+stream_2/stream = ExtResource("6_02gw7")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2y2jw"]
+streams_count = 4
+stream_0/stream = ExtResource("7_064dn")
+stream_1/stream = ExtResource("8_ic5jq")
+stream_2/stream = ExtResource("9_if78k")
+stream_3/stream = ExtResource("10_8igv3")
+
+[node name="AudioManager" type="Node" unique_id=1128192510]
+script = ExtResource("1_8qd8g")
+title_music = ExtResource("2_3asnw")
+game_music = ExtResource("3_m6ggh")
+
+[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2118940643]
+
+[node name="SFXAudioStreamPlayerFoundTarget" type="AudioStreamPlayer" parent="." unique_id=1614364980]
+stream = SubResource("AudioStreamRandomizer_ujhup")
+
+[node name="SFXAudioStreamPlayerWrongTarget" type="AudioStreamPlayer" parent="." unique_id=1386658185]
+stream = SubResource("AudioStreamRandomizer_2y2jw")
+
+[node name="SFXAudioStreamPlayerStrikeCorrect" type="AudioStreamPlayer" parent="." unique_id=133951487]
+stream = ExtResource("11_ic5jq")
+
+[node name="SFXAudioStreamPlayerStrikeWrong" type="AudioStreamPlayer" parent="." unique_id=1815965729]
+stream = ExtResource("12_if78k")
+
+[node name="SFXAudioStreamPlayerHint" type="AudioStreamPlayer" parent="." unique_id=1622156341]
+stream = ExtResource("13_oucy0")
+
+[node name="SFXAudioStreamPlayerCrowd" type="AudioStreamPlayer" parent="." unique_id=497976147]
+stream = ExtResource("14_cuol6")
+
+[node name="SFXAudioStreamPlayerCurtainOpen" type="AudioStreamPlayer" parent="." unique_id=130061142]
+stream = ExtResource("15_m1k83")
+
+[node name="SFXAudioStreamPlayerCurtainClose" type="AudioStreamPlayer" parent="." unique_id=1187770038]
+stream = ExtResource("16_oummu")

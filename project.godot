@@ -15,6 +15,10 @@ run/main_scene="uid://bidomgm7ctimo"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/debug/icon.svg"
 
+[autoload]
+
+SignalBus="*uid://pe87dpoftsb2"
+
 [display]
 
 window/size/viewport_width=1920
