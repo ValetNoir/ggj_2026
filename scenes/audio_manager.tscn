@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bpjlypaco6u3g"]
 
 [ext_resource type="Script" uid="uid://d3648r2ya3lbf" path="res://scripts/audio_manager.gd" id="1_8qd8g"]
-[ext_resource type="AudioStream" uid="uid://d4jefqrkd1jgi" path="res://assets/audio/music/GGJ - Dino ingame b.ogg" id="2_3asnw"]
-[ext_resource type="AudioStream" uid="uid://up8t328l2tw8" path="res://assets/audio/music/GGJ - Dino ingame.ogg" id="3_m6ggh"]
+[ext_resource type="AudioStream" uid="uid://c8syc3tmmr7ot" path="res://assets/audio/music/GGJ_Dino_Title_music.mp3" id="2_oucy0"]
+[ext_resource type="AudioStream" uid="uid://db32we8l8hgk7" path="res://assets/audio/music/GGJ_Dino_Game_music.mp3" id="3_cuol6"]
 [ext_resource type="AudioStream" uid="uid://dkfvqg3w52f5p" path="res://assets/audio/sfx/Target-Voiceline1.wav" id="4_njtn3"]
 [ext_resource type="AudioStream" uid="uid://dhoywdiloey0b" path="res://assets/audio/sfx/Target-Voiceline2.wav" id="5_kq7b2"]
 [ext_resource type="AudioStream" uid="uid://c81jmia16002g" path="res://assets/audio/sfx/Target-Voiceline3.wav" id="6_02gw7"]
@@ -32,8 +32,8 @@ stream_3/stream = ExtResource("10_8igv3")
 
 [node name="AudioManager" type="Node" unique_id=1128192510]
 script = ExtResource("1_8qd8g")
-title_music = ExtResource("2_3asnw")
-game_music = ExtResource("3_m6ggh")
+title_music = ExtResource("2_oucy0")
+game_music = ExtResource("3_cuol6")
 
 [node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2118940643]
 

@@ -13,6 +13,7 @@ func reset():
 	for child in heart_container.get_children():
 		if child is TextureRect:
 			child.texture = intact_heart_texture
+	show()
 
 func strike():
 	var array: Array = heart_container.get_children()
