@@ -10,13 +10,8 @@ const _spawn_margin: float = 250.0
 signal target_found
 signal wrong_character_clicked
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_spawn_rect = get_viewport_rect().grow(-1.0 * _spawn_margin)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func spawn_level(level: Level) -> void:
 	for child in get_children():

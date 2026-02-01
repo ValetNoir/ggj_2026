@@ -29,10 +29,10 @@ static func generate_descriptions(count: int, max_similarities: int) -> void:
 static func _make_description_from_parameters(parameters: Array[int]) -> Description:
 	assert(parameters.size() >= Parameters.size(), "Tried to make description from too few parameters")
 	var description := Description.new()
-	description.species = parameters[Parameters.SPECIES]
-	description.emotion = parameters[Parameters.EMOTION]
-	description.pattern = parameters[Parameters.PATTERN]
-	description.color = parameters[Parameters.COLOR]
+	description.species = parameters[Parameters.SPECIES] as Description.Species
+	description.emotion = parameters[Parameters.EMOTION] as Description.Emotion
+	description.pattern = parameters[Parameters.PATTERN] as Description.Pattern
+	description.color = parameters[Parameters.COLOR] as Description.MaskColor
 	return description
 
 static func _get_string_from_description(desc: Description) -> String:

@@ -10,8 +10,11 @@ extends Control
 func on_new_level_diplay_info_flash(duration: float):
 	await get_tree().create_timer(0.3).timeout
 	set_description(DescriptionMaker.target_description)
+	await display_info(duration)
+
+func display_info(duration: float):
 	var offset = Vector2(0, get_viewport_rect().size.y)
-	position = offset;
+	position = offset
 	show()
 	var tween1 = get_tree().create_tween()
 	tween1.tween_property(self, 'position', Vector2.ZERO, tween_duration)
@@ -24,16 +27,17 @@ func on_new_level_diplay_info_flash(duration: float):
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(self, 'position', offset, tween_duration)
 	tween2.tween_callback(hide)
+	await tween2.finished
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	timer_label.text = str(snapped(timer.time_left, 0.1)) + "s"
 
 func set_description(description: Description):
-	var text: String
+	var text: String = ""
 	#text += str("[ul]")
 	match description.species:
 		Description.Species.DIPLODOCUS:

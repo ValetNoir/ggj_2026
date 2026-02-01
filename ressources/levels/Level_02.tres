@@ -1,8 +1,7 @@
 [gd_resource type="Resource" script_class="Level" format=3 uid="uid://cdtuk68hjrbrp"]
 
-[ext_resource type="Script" uid="uid://dgbfe0a7um58p" path="res://scripts/level.gd" id="1_hgqah"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_hgqah"]
 
 [resource]
 script = ExtResource("1_hgqah")
 max_similarity = 1
-metadata/_custom_type_script = "uid://dgbfe0a7um58p"

@@ -117,7 +117,7 @@ func _hold_next_character() -> void:
 	return
 
 
-func _on_area_2d_input_event(viewport: Viewport, event: InputEvent, shape_idx: int) ->void:
+func _on_area_2d_input_event(viewport: Viewport, event: InputEvent, _shape_idx: int) ->void:
 	if event is InputEventMouseButton and event.is_pressed():
 		viewport.set_input_as_handled()
 		character_clicked.emit(_mask.description)

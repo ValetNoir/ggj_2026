@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://bor17ybdjxdbg" path="res://ressources/levels/Level_11.tres" id="13_qnb83"]
 [ext_resource type="Texture2D" uid="uid://dbarlmfg5qyvo" path="res://assets/dance_floor/dance_floor.png" id="13_rysoc"]
 [ext_resource type="Resource" uid="uid://w8m0and4ilb1" path="res://ressources/levels/Level_12.tres" id="14_sww3w"]
-[ext_resource type="Script" path="res://scripts/cheat_ui.gd" id="14_trtic"]
+[ext_resource type="Script" uid="uid://c2nd17karykng" path="res://scripts/cheat_ui.gd" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="15_ir15t"]
 [ext_resource type="Resource" uid="uid://bd50wc4eyi54s" path="res://ressources/levels/Level_13.tres" id="15_suyxu"]
 [ext_resource type="PackedScene" uid="uid://57jg3jacwwkl" path="res://scenes/info_flash.tscn" id="16_ca42v"]
@@ -50,8 +50,9 @@ texture = ExtResource("13_rysoc")
 y_sort_enabled = true
 
 [node name="CheatUI" type="HBoxContainer" parent="." unique_id=1033743999]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+offset_right = 303.0
+offset_bottom = 100.0
 script = ExtResource("14_trtic")
 
 [node name="Panel" type="Panel" parent="CheatUI" unique_id=1876922649]
@@ -75,16 +76,20 @@ text = "Next Level"
 [node name="InfoFlash" parent="CanvasLayer" unique_id=1219634045 instance=ExtResource("16_ca42v")]
 unique_name_in_owner = true
 
-[node name="LevelCounter" type="RichTextLabel" parent="CanvasLayer" unique_id=612534218]
-anchors_preset = 5
+[node name="LevelCounter" type="RichTextLabel" parent="CanvasLayer/InfoFlash" unique_id=612534218]
+layout_mode = 1
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -148.5
-offset_right = 148.49951
-offset_bottom = 182.0
+anchor_bottom = 1.0
+offset_left = -313.38126
+offset_top = -197.0
+offset_right = 313.38126
 grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("28_sgl2t")
-text = "Level Count : "
+text = "Level Count"
 horizontal_alignment = 1
 script = ExtResource("29_qouja")
 
@@ -95,4 +100,5 @@ scale = Vector2(0.2, 0.2)
 [node name="Curtains" parent="." unique_id=914103840 instance=ExtResource("28_sww3w")]
 
 [connection signal="level_loaded" from="." to="CheatUI" method="on_level_loaded"]
+[connection signal="level_loaded" from="." to="CanvasLayer/InfoFlash/LevelCounter" method="update_level_text"]
 [connection signal="pressed" from="CheatUI/Button" to="." method="next_level"]
