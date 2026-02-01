@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cbnk1b7crmvpp"]
+
+[ext_resource type="Script" uid="uid://ddmy427ljgr0f" path="res://scripts/upper_menu.gd" id="1_8360x"]
+[ext_resource type="Texture2D" uid="uid://mc515ktsqafy" path="res://assets/ui/ui_heart.png" id="1_fr35m"]
+[ext_resource type="Texture2D" uid="uid://ll2jh0qajwat" path="res://assets/ui/ui_heart_broken.png" id="3_7h27y"]
+
+[node name="UpperMenu" type="Control" unique_id=130502043]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -953.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8360x")
+intact_heart_texture = ExtResource("1_fr35m")
+broken_heart_texture = ExtResource("3_7h27y")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2123173375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HeartContainer" type="HBoxContainer" parent="MarginContainer" unique_id=894800726]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Heart1" type="TextureRect" parent="MarginContainer/HeartContainer" unique_id=382349429]
+layout_mode = 2
+texture = ExtResource("1_fr35m")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Heart2" type="TextureRect" parent="MarginContainer/HeartContainer" unique_id=1299813380]
+layout_mode = 2
+texture = ExtResource("1_fr35m")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Heart3" type="TextureRect" parent="MarginContainer/HeartContainer" unique_id=300561469]
+layout_mode = 2
+texture = ExtResource("1_fr35m")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Heart4" type="TextureRect" parent="MarginContainer/HeartContainer" unique_id=1211036758]
+layout_mode = 2
+texture = ExtResource("1_fr35m")
+expand_mode = 2
+stretch_mode = 4

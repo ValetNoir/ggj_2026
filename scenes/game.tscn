@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bidomgm7ctimo"]
 
 [ext_resource type="Script" uid="uid://mmlhjkrax86p" path="res://scripts/game.gd" id="1_uwrxv"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="2_dinhu"]
+[ext_resource type="Script" uid="uid://dgbfe0a7um58p" path="res://scripts/level.gd" id="2_dinhu"]
 [ext_resource type="Resource" uid="uid://bg5oo5ufyg4tt" path="res://ressources/levels/Level_01.tres" id="3_kvuet"]
 [ext_resource type="Resource" uid="uid://cdtuk68hjrbrp" path="res://ressources/levels/Level_02.tres" id="4_trtic"]
 [ext_resource type="Resource" uid="uid://mpwrgmhuajkv" path="res://ressources/levels/Level_03.tres" id="5_ir15t"]
@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://bw3mxnl7w0jk4" path="res://ressources/levels/Level_08.tres" id="10_1kice"]
 [ext_resource type="Resource" uid="uid://dtxdcvfrot2s8" path="res://ressources/levels/Level_09.tres" id="11_5newe"]
 [ext_resource type="Resource" uid="uid://dmoqaibjq630q" path="res://ressources/levels/Level_10.tres" id="12_37s47"]
-[ext_resource type="PackedScene" uid="uid://gwao08t8bd7k" path="res://scenes/character_spawner.tscn" id="13_kvuet"]
+[ext_resource type="PackedScene" uid="uid://dmtg1nin4bq1" path="res://scenes/character_spawner.tscn" id="13_kvuet"]
 [ext_resource type="Resource" uid="uid://bor17ybdjxdbg" path="res://ressources/levels/Level_11.tres" id="13_qnb83"]
 [ext_resource type="Texture2D" uid="uid://dbarlmfg5qyvo" path="res://assets/dance_floor/dance_floor.png" id="13_rysoc"]
 [ext_resource type="Resource" uid="uid://w8m0and4ilb1" path="res://ressources/levels/Level_12.tres" id="14_sww3w"]
@@ -31,6 +31,14 @@
 [ext_resource type="Theme" uid="uid://bv1c2mvbc8mml" path="res://ressources/themes/info_flash_richtext.tres" id="28_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://bxu3v15or16o0" path="res://scenes/curtains.tscn" id="28_sww3w"]
 [ext_resource type="Script" uid="uid://bu72utq8tbw4x" path="res://scenes/level_counter.gd" id="29_qouja"]
+[ext_resource type="PackedScene" uid="uid://cbnk1b7crmvpp" path="res://scenes/upper_menu.tscn" id="30_wljb1"]
+[ext_resource type="LabelSettings" uid="uid://dqpe5etala8ng" path="res://ressources/themes/game_over_label.tres" id="31_js0lu"]
+[ext_resource type="PackedScene" uid="uid://bpjlypaco6u3g" path="res://scenes/audio_manager.tscn" id="35_gxtfn"]
+
+[sub_resource type="Theme" id="Theme_qouja"]
+
+[sub_resource type="Theme" id="Theme_js0lu"]
+Button/font_sizes/font_size = 50
 
 [node name="Game" type="Node2D" unique_id=607520342]
 script = ExtResource("1_uwrxv")
@@ -51,8 +59,8 @@ y_sort_enabled = true
 
 [node name="CheatUI" type="HBoxContainer" parent="." unique_id=1033743999]
 visible = false
-offset_right = 303.0
-offset_bottom = 100.0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("14_trtic")
 
 [node name="Panel" type="Panel" parent="CheatUI" unique_id=1876922649]
@@ -75,6 +83,7 @@ text = "Next Level"
 
 [node name="InfoFlash" parent="CanvasLayer" unique_id=1219634045 instance=ExtResource("16_ca42v")]
 unique_name_in_owner = true
+theme = SubResource("Theme_qouja")
 
 [node name="LevelCounter" type="RichTextLabel" parent="CanvasLayer/InfoFlash" unique_id=612534218]
 layout_mode = 1
@@ -93,12 +102,60 @@ text = "Level Count"
 horizontal_alignment = 1
 script = ExtResource("29_qouja")
 
+[node name="UpperMenu" parent="CanvasLayer" unique_id=130502043 instance=ExtResource("30_wljb1")]
+unique_name_in_owner = true
+
+[node name="GameOverMenu" type="Control" parent="CanvasLayer" unique_id=1071824556]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer/GameOverMenu" unique_id=1351282722]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = ExtResource("31_js0lu")
+
+[node name="RetryButton" type="Button" parent="CanvasLayer/GameOverMenu" unique_id=2049893823]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = 141.0
+offset_right = 68.5
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_js0lu")
+text = "Retry"
+
 [node name="disco_ball" parent="." unique_id=1477989180 instance=ExtResource("24_suyxu")]
 position = Vector2(960, -3.9999924)
 scale = Vector2(0.2, 0.2)
 
 [node name="Curtains" parent="." unique_id=914103840 instance=ExtResource("28_sww3w")]
 
+[node name="AudioManager" parent="." unique_id=1128192510 instance=ExtResource("35_gxtfn")]
+
 [connection signal="level_loaded" from="." to="CheatUI" method="on_level_loaded"]
 [connection signal="level_loaded" from="." to="CanvasLayer/InfoFlash/LevelCounter" method="update_level_text"]
 [connection signal="pressed" from="CheatUI/Button" to="." method="next_level"]
+[connection signal="pressed" from="CanvasLayer/GameOverMenu/RetryButton" to="." method="_on_retry_button_pressed"]
