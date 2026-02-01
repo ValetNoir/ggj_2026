@@ -58,28 +58,6 @@ texture = ExtResource("13_rysoc")
 [node name="CharacterSpawner" parent="." unique_id=1560401905 instance=ExtResource("13_kvuet")]
 y_sort_enabled = true
 
-[node name="CheatUI" type="HBoxContainer" parent="." unique_id=1033743999]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("14_trtic")
-
-[node name="Panel" type="Panel" parent="CheatUI" unique_id=1876922649]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="Mask" parent="CheatUI/Panel" unique_id=1409669806 instance=ExtResource("15_ir15t")]
-position = Vector2(50, 50)
-scale = Vector2(0.1, 0.1)
-
-[node name="Label" type="Label" parent="CheatUI" unique_id=1398786224]
-layout_mode = 2
-text = "Current level:"
-
-[node name="Button" type="Button" parent="CheatUI" unique_id=1672822306]
-layout_mode = 2
-text = "Next Level"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1744711347]
 
 [node name="InfoFlash" parent="CanvasLayer" unique_id=1219634045 instance=ExtResource("16_ca42v")]
@@ -105,6 +83,100 @@ script = ExtResource("29_qouja")
 
 [node name="UpperMenu" parent="CanvasLayer" unique_id=130502043 instance=ExtResource("30_wljb1")]
 unique_name_in_owner = true
+
+[node name="VictoryMenu" type="Control" parent="CanvasLayer" unique_id=1857571751]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VictoryLabel" type="Label" parent="CanvasLayer/VictoryMenu" unique_id=1227430739]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = ExtResource("31_js0lu")
+
+[node name="RetryButton" type="Button" parent="CanvasLayer/VictoryMenu" unique_id=1392981992]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = 141.0
+offset_right = 68.5
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_js0lu")
+text = "Retry"
+
+[node name="Lore" type="Control" parent="CanvasLayer/VictoryMenu" unique_id=365852933]
+anchors_preset = 0
+offset_left = 502.0
+offset_top = 37.0
+offset_right = 1474.0
+offset_bottom = 1186.1548
+mouse_filter = 2
+
+[node name="LoreTextureRect" type="TextureRect" parent="CanvasLayer/VictoryMenu/Lore" unique_id=1212940471]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("32_gxtfn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VictoryMenu/Lore/LoreTextureRect" unique_id=776928031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 180
+theme_override_constants/margin_right = 212
+theme_override_constants/margin_bottom = 180
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VictoryMenu/Lore/LoreTextureRect/MarginContainer" unique_id=1355049036]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("28_sgl2t")
+bbcode_enabled = true
+text = "You finally found me !
+
+And it only took you 0 tries and 0 seconds...
+
+Thank you for playing !!!
+
+Made by
+Ghislain, Aeropulu, Railnof and valet_noir
+
+"
+fit_content = true
+horizontal_alignment = 1
 
 [node name="GameOverMenu" type="Control" parent="CanvasLayer" unique_id=1071824556]
 unique_name_in_owner = true
@@ -151,6 +223,7 @@ text = "Retry"
 
 [node name="TitleMenu" type="Control" parent="CanvasLayer" unique_id=1536200908]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,6 +314,27 @@ P.S. if you don't, I've left you clues ;)
 "
 fit_content = true
 
+[node name="CheatUI" type="HBoxContainer" parent="CanvasLayer" unique_id=1033743999]
+offset_right = 303.0
+offset_bottom = 100.0
+script = ExtResource("14_trtic")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/CheatUI" unique_id=1876922649]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Mask" parent="CanvasLayer/CheatUI/Panel" unique_id=1409669806 instance=ExtResource("15_ir15t")]
+position = Vector2(50, 50)
+scale = Vector2(0.1, 0.1)
+
+[node name="Label" type="Label" parent="CanvasLayer/CheatUI" unique_id=1398786224]
+layout_mode = 2
+text = "Current level:"
+
+[node name="Button" type="Button" parent="CanvasLayer/CheatUI" unique_id=1672822306]
+layout_mode = 2
+text = "Next Level"
+
 [node name="disco_ball" parent="." unique_id=1477989180 instance=ExtResource("24_suyxu")]
 position = Vector2(960, -3.9999924)
 scale = Vector2(0.2, 0.2)
@@ -249,8 +343,8 @@ scale = Vector2(0.2, 0.2)
 
 [node name="AudioManager" parent="." unique_id=1128192510 instance=ExtResource("35_gxtfn")]
 
-[connection signal="level_loaded" from="." to="CheatUI" method="on_level_loaded"]
+[connection signal="level_loaded" from="." to="CanvasLayer/CheatUI" method="on_level_loaded"]
 [connection signal="level_loaded" from="." to="CanvasLayer/InfoFlash/LevelCounter" method="update_level_text"]
-[connection signal="pressed" from="CheatUI/Button" to="." method="next_level"]
 [connection signal="pressed" from="CanvasLayer/GameOverMenu/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleMenu/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CheatUI/Button" to="." method="next_level"]

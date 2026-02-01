@@ -9,9 +9,9 @@ extends Node2D
 @onready var curtains: Curtains = $Curtains
 @onready var upper_menu: UpperMenu = %UpperMenu
 @onready var game_over_menu: Control = %GameOverMenu
+@onready var victory_menu: Control = %VictoryMenu
 @onready var title_menu: Control = %TitleMenu
 @onready var lore: Control = %Lore
-@onready var level_counter: RichTextLabel = $CanvasLayer/LevelCounter
 
 signal level_loaded(level_index: int, levels_count: int)
 
@@ -27,7 +27,6 @@ func reset():
 	title_menu.hide()
 	current_life = max_life
 	upper_menu.reset()
-	level_counter.show()
 	load_level(current_level_index)
 	SignalBus.play_music.emit(SignalBus.MUSIC.GAME)
 
@@ -61,7 +60,8 @@ func next_level() -> void:
 		current_life += 1
 
 func show_victory_screen() -> void:
-	pass
+	await curtains.close_curtains()
+	game_over_menu.show()
 
 func _on_target_found() -> void:
 	next_level()
@@ -80,13 +80,13 @@ func _on_wrong_target() -> void:
 
 func show_game_over_screen():
 	await curtains.close_curtains()
-	game_over_menu.show()
+	victory_menu.show()
 
 func show_title_menu():
 	game_over_menu.hide()
+	victory_menu.hide()
 	title_menu.show()
 	upper_menu.hide()
-	level_counter.hide()
 	SignalBus.play_music.emit(SignalBus.MUSIC.TITLE)
 	# ...lore
 	lore.show()
