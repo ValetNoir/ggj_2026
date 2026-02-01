@@ -58,8 +58,7 @@ func _on_wrong_target() -> void:
 	if current_life < 1:
 		show_game_over_screen()
 	else:
-		#TODO Reshow info flash
-		pass
+		await info_flash.display_info(levels[current_level_index].clue_duration)
 	await get_tree().create_timer(0.5).timeout
 	SignalBus.play_sfx.emit(SignalBus.SFX.WRONG_TARGET)
 
