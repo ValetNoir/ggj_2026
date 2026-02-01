@@ -37,61 +37,61 @@ func set_description(description: Description):
 	#text += str("[ul]")
 	match description.species:
 		Description.Species.DIPLODOCUS:
-			text += str("[ul]My dino is a [font_size=32]Diplodocus[/font_size][br]")
-			text += str("Its head is pear-shaped[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Diplodocus[/font_size][br]")
+			text += str("His head is pear-shaped[br]")
 		Description.Species.BRACHIOSAURUS:
-			text += str("[ul]My dino is a [font_size=32]Brachiosaurus[/font_size][br]")
-			text += str("Its head is pear-shaped[br]")
-			text += str("It's got a crest[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Brachiosaurus[/font_size][br]")
+			text += str("His head is pear-shaped[br]")
+			text += str("He has a crest[br]")
 		Description.Species.TRICERATOPS:
-			text += str("[ul]My dino is a [font_size=32]Triceratops[/font_size][br]")
-			text += str("It's got a frill[br]")
-			text += str("It's got a beak[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Triceratops[/font_size][br]")
+			text += str("He has a frill[br]")
+			text += str("He has a beak[br]")
 		Description.Species.PROTOCERATOPS:
-			text += str("[ul]My dino is a [font_size=32]Protoceratops[/font_size][br]")
-			text += str("It's got a frill[br]")
-			text += str("It's got a beak[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Protoceratops[/font_size][br]")
+			text += str("He has a frill[br]")
+			text += str("He has a beak[br]")
 		Description.Species.TYRANNOSAURUS:
-			text += str("[ul]My dino is a [font_size=32]Tyrannosaurus[/font_size][br]")
-			text += str("It's a meat-eater[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Tyrannosaurus[/font_size][br]")
+			text += str("He has a teethed mouth[br]")
 		Description.Species.CERATOSAURUS:
-			text += str("[ul]My dino is a [font_size=32]Ceratosaurus[/font_size][br]")
-			text += str("It's a meat-eater[br]")
-			text += str("It's got a horn[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Ceratosaurus[/font_size][br]")
+			text += str("He has a teethed mouth[br]")
+			text += str("He has a horn[br]")
 		Description.Species.HADROSAURUS:
-			text += str("[ul]My dino is a [font_size=32]Hadrosaurus[/font_size][br]")
-			text += str("It's got a duck bill[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Hadrosaurus[/font_size][br]")
+			text += str("He has a duck bill[br]")
 		Description.Species.PARASAUROLOPHUS:
-			text += str("[ul]My dino is a [font_size=32]Parasaurolophus[/font_size][br]")
-			text += str("It's got a crest[br]")
-			text += str("It's got a duck bill[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Parasaurolophus[/font_size][br]")
+			text += str("He has a crest[br]")
+			text += str("He has a duck bill[br]")
 		Description.Species.OVIRAPTOR:
-			text += str("[ul]My dino is a [font_size=32]Oviraptor[/font_size][br]")
-			text += str("It's got a crest[br]")
-			text += str("It's got a beak[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Oviraptor[/font_size][br]")
+			text += str("He has a crest[br]")
+			text += str("He has a beak[br]")
 		_:
 			pass
 	match description.color:
 		Description.MaskColor.RED:
-			text += str("It is red[br]")
+			text += str("He is red[br]")
 		Description.MaskColor.GREEN:
-			text += str("It is green[br]")
+			text += str("He is green[br]")
 		Description.MaskColor.BLUE:
-			text += str("It is blue[br]")
+			text += str("He is blue[br]")
 		_:
 			pass
 	match description.pattern:
 		Description.Pattern.DOTS:
-			text += str("It is covered in dots[br]")
+			text += str("He is covered in dots[br]")
 		Description.Pattern.FEATHERS:
-			text += str("It is covered in feathers[br]")
+			text += str("He is covered in feathers[br]")
 		_:
 			pass
 	match description.emotion:
 		Description.Emotion.HAPPY:
-			text += str("It looks happy[br][/ul]")
+			text += str("He looks happy[br][/ul]")
 		Description.Emotion.SAD:
-			text += str("It looks sad[br][/ul]")
+			text += str("He looks sad[br][/ul]")
 		_:
 			pass
 	update_text(text)
