@@ -21,6 +21,7 @@ shader_parameter/is_outline_on = false
 shader_parameter/mask_color = Vector4(0, 0, 0, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8u57e"]
+resource_local_to_scene = true
 shader = ExtResource("4_uscli")
 shader_parameter/mask_color = Vector4(0, 0, 0, 0)
 

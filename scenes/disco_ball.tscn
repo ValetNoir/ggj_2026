@@ -79,10 +79,10 @@ _data = {
 [node name="disco_ball" type="Node2D" unique_id=1477989180]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1833398297]
-position = Vector2(977, 512)
 sprite_frames = SubResource("SpriteFrames_2jyvc")
 autoplay = "default"
 frame_progress = 0.13317883
+offset = Vector2(0, 400)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022361406]
 libraries/ = SubResource("AnimationLibrary_bpunw")
