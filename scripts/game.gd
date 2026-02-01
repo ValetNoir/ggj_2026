@@ -19,7 +19,13 @@ func load_level(level: int) -> void:
 
 func next_level() -> void:
 	current_level_index += 1
+	if current_level_index >= levels.size():
+		show_victory_screen()
+		return
 	load_level(current_level_index)
+	
+func show_victory_screen() -> void:
+	pass
 
 func _on_target_found() -> void:
 	next_level()
