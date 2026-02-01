@@ -9,22 +9,38 @@ extends Node2D
 @onready var curtains: Curtains = $Curtains
 @onready var upper_menu: UpperMenu = %UpperMenu
 @onready var game_over_menu: Control = %GameOverMenu
+@onready var title_menu: Control = %TitleMenu
+@onready var lore: Control = %Lore
+@onready var level_counter: RichTextLabel = $CanvasLayer/LevelCounter
 
 signal level_loaded(level_index: int, levels_count: int)
 
+enum STATE {
+	LORE_ON,
+	LORE_OFF
+}
+
 var current_life: int
+var current_state: STATE = STATE.LORE_ON
 
 func reset():
+	title_menu.hide()
 	current_life = max_life
 	upper_menu.reset()
+	level_counter.show()
 	load_level(current_level_index)
 	SignalBus.play_music.emit(SignalBus.MUSIC.GAME)
-	game_over_menu.hide()
 
 func _ready() -> void:
+	show_title_menu()
 	character_spawner.target_found.connect(_on_target_found)
 	character_spawner.wrong_character_clicked.connect(_on_wrong_target)
-	reset()
+
+func _unhandled_input(event):
+	if current_state == STATE.LORE_ON and (event is InputEventMouseButton or event is InputEventKey):
+		current_state = STATE.LORE_OFF
+		var tween = get_tree().create_tween()
+		tween.tween_property(lore, "modulate", Color.TRANSPARENT, 1.0)
 
 func load_level(level: int) -> void:
 	assert(level >= 0 and level < levels.size(), "Invalid level: %d" % level)
@@ -66,5 +82,19 @@ func show_game_over_screen():
 	await curtains.close_curtains()
 	game_over_menu.show()
 
+func show_title_menu():
+	game_over_menu.hide()
+	title_menu.show()
+	upper_menu.hide()
+	level_counter.hide()
+	SignalBus.play_music.emit(SignalBus.MUSIC.TITLE)
+	# ...lore
+	lore.show()
+	lore.modulate = Color.WHITE
+	current_state = STATE.LORE_ON
+
 func _on_retry_button_pressed():
+	show_title_menu()
+
+func _on_play_button_pressed():
 	reset()

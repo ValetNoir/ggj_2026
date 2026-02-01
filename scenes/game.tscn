@@ -33,6 +33,7 @@
 [ext_resource type="Script" uid="uid://bu72utq8tbw4x" path="res://scenes/level_counter.gd" id="29_qouja"]
 [ext_resource type="PackedScene" uid="uid://cbnk1b7crmvpp" path="res://scenes/upper_menu.tscn" id="30_wljb1"]
 [ext_resource type="LabelSettings" uid="uid://dqpe5etala8ng" path="res://ressources/themes/game_over_label.tres" id="31_js0lu"]
+[ext_resource type="Texture2D" uid="uid://d31ero2p8t5yd" path="res://assets/ui/papier_froisse.png" id="32_gxtfn"]
 [ext_resource type="PackedScene" uid="uid://bpjlypaco6u3g" path="res://scenes/audio_manager.tscn" id="35_gxtfn"]
 
 [sub_resource type="Theme" id="Theme_qouja"]
@@ -107,6 +108,7 @@ unique_name_in_owner = true
 
 [node name="GameOverMenu" type="Control" parent="CanvasLayer" unique_id=1071824556]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -147,6 +149,98 @@ grow_vertical = 2
 theme = SubResource("Theme_js0lu")
 text = "Retry"
 
+[node name="TitleMenu" type="Control" parent="CanvasLayer" unique_id=1536200908]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TitleLabelPlaceholder" type="Label" parent="CanvasLayer/TitleMenu" unique_id=875266337]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -350.0
+offset_right = 342.0
+offset_bottom = -207.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DISCOSAURUS"
+label_settings = ExtResource("31_js0lu")
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/TitleMenu" unique_id=1878440867]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = 141.0
+offset_right = 68.5
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_js0lu")
+text = "Play"
+
+[node name="Lore" type="Control" parent="CanvasLayer/TitleMenu" unique_id=1939744134]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 502.0
+offset_top = 37.0
+offset_right = 1474.0
+offset_bottom = 1186.1548
+mouse_filter = 2
+
+[node name="LoreTextureRect" type="TextureRect" parent="CanvasLayer/TitleMenu/Lore" unique_id=1681707104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("32_gxtfn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TitleMenu/Lore/LoreTextureRect" unique_id=893252067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 165
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 180
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TitleMenu/Lore/LoreTextureRect/MarginContainer" unique_id=1251427955]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("28_sgl2t")
+bbcode_enabled = true
+text = "Hi darling,
+
+I'm glad you could come over to the dino party! 
+By the way, I hope you remember which mask I am wearing? 
+
+Find me, or else...
+
+P.S. if you don't, I've left you clues ;)
+"
+fit_content = true
+
 [node name="disco_ball" parent="." unique_id=1477989180 instance=ExtResource("24_suyxu")]
 position = Vector2(960, -3.9999924)
 scale = Vector2(0.2, 0.2)
@@ -159,3 +253,4 @@ scale = Vector2(0.2, 0.2)
 [connection signal="level_loaded" from="." to="CanvasLayer/InfoFlash/LevelCounter" method="update_level_text"]
 [connection signal="pressed" from="CheatUI/Button" to="." method="next_level"]
 [connection signal="pressed" from="CanvasLayer/GameOverMenu/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TitleMenu/PlayButton" to="." method="_on_play_button_pressed"]
