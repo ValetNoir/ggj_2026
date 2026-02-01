@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dbpa350c6x4fh"]
+
+[ext_resource type="Script" uid="uid://tcbe5uxckat3" path="res://scripts/curtains.gd" id="1_dtp0v"]
+[ext_resource type="Texture2D" uid="uid://bf1igu6vq7vv0" path="res://assets/ui/rideau.png" id="1_mvr83"]
+
+[node name="Curtains" type="Node2D" unique_id=914103840 node_paths=PackedStringArray("curtains")]
+script = ExtResource("1_dtp0v")
+curtains = [NodePath("Curtain_Right/Curtain"), NodePath("Curtain_Left/Curtain")]
+
+[node name="Curtain_Right" type="Node2D" parent="." unique_id=620172468]
+position = Vector2(1343, 544)
+
+[node name="Curtain" type="Sprite2D" parent="Curtain_Right" unique_id=801447037]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_mvr83")
+
+[node name="Curtain_Left" type="Node2D" parent="." unique_id=1634931670]
+position = Vector2(601, 544)
+scale = Vector2(-1, 1)
+
+[node name="Curtain" type="Sprite2D" parent="Curtain_Left" unique_id=954725220]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_mvr83")

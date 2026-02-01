@@ -4,6 +4,7 @@ extends Control
 @onready var info_flash_richtext: RichTextLabel = %info_flash_richtext
 @onready var timer_label: RichTextLabel = $TimerLabel
 @onready var timer: Timer = $Timer
+@export var tween_duration: float = 1.0
 
 # Call this method to display the info flash for 'duration'
 func on_new_level_diplay_info_flash(duration: float):
@@ -13,7 +14,7 @@ func on_new_level_diplay_info_flash(duration: float):
 	position = offset;
 	show()
 	var tween1 = get_tree().create_tween()
-	tween1.tween_property(self, 'position', Vector2.ZERO, 2.0)
+	tween1.tween_property(self, 'position', Vector2.ZERO, tween_duration)
 	await tween1.finished
 	timer_label.show()
 	timer.wait_time = duration
@@ -21,8 +22,12 @@ func on_new_level_diplay_info_flash(duration: float):
 	await timer.timeout
 	timer_label.hide()
 	var tween2 = get_tree().create_tween()
-	tween2.tween_property(self, 'position', offset, 2.0)
+	tween2.tween_property(self, 'position', offset, tween_duration)
 	tween2.tween_callback(hide)
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		print("click coin")
 
 func _process(delta: float) -> void:
 	timer_label.text = str(snapped(timer.time_left, 0.1)) + "s"
