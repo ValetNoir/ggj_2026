@@ -12,6 +12,9 @@ extends Node2D
 @onready var victory_menu: Control = %VictoryMenu
 @onready var title_menu: Control = %TitleMenu
 @onready var lore: Control = %Lore
+@onready var game_timer: Timer = %GameTimer
+
+var mistake_counter = 0
 
 signal level_loaded(level_index: int, levels_count: int)
 
@@ -24,8 +27,11 @@ var current_life: int
 var current_state: STATE = STATE.LORE_ON
 
 func reset():
+	game_timer.start(1000000)
+	mistake_counter = 0;
 	title_menu.hide()
 	current_life = max_life
+	current_level_index = 0
 	upper_menu.reset()
 	load_level(current_level_index)
 	SignalBus.play_music.emit(SignalBus.MUSIC.GAME)
@@ -62,7 +68,7 @@ func next_level() -> void:
 
 func show_victory_screen() -> void:
 	await curtains.close_curtains()
-	game_over_menu.show()
+	victory_menu.display(mistake_counter)
 
 func _on_target_found() -> void:
 	next_level()
@@ -70,18 +76,19 @@ func _on_target_found() -> void:
 	SignalBus.play_sfx.emit(SignalBus.SFX.FOUND_TARGET)
 
 func _on_wrong_target() -> void:
+	mistake_counter += 1
 	upper_menu.strike()
 	current_life -= 1
 	if current_life < 1:
 		show_game_over_screen()
-	else:
+	elif current_level_index < levels.size():
 		await info_flash.display_info(levels[current_level_index].clue_duration)
 	await get_tree().create_timer(0.5).timeout
 	SignalBus.play_sfx.emit(SignalBus.SFX.WRONG_TARGET)
 
 func show_game_over_screen():
 	await curtains.close_curtains()
-	victory_menu.show()
+	game_over_menu.show()
 
 func show_title_menu():
 	game_over_menu.hide()
