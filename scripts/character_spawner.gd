@@ -5,7 +5,7 @@ extends Node2D
 @export var number_to_generate: int = 20
 @export var max_similarity: int = 1
 var _spawn_rect: Rect2 = Rect2()
-const _spawn_margin: float = 30.0
+const _spawn_margin: float = 250.0
 
 signal target_found
 
@@ -47,6 +47,7 @@ func spawn(description: Description) -> void:
 	add_child(character)
 	character._mask.set_description(description)
 	character.character_clicked.connect(_on_character_clicked)
+	character._valid_rect = _spawn_rect;
 
 func _on_character_clicked(desc: Description) -> void:
 	if desc == DescriptionMaker.target_description:

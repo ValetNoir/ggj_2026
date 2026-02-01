@@ -14,7 +14,7 @@ metadata/_custom_type_script = "uid://57gc2nons7ou"
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2a672"]
 resource_local_to_scene = true
 shader = ExtResource("2_xsism")
-shader_parameter/outline_thickness = 20.0
+shader_parameter/outline_thickness = 100.0
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/is_outline_on = false
 shader_parameter/mask_color = Vector4(0, 0, 0, 0)

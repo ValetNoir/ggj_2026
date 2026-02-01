@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://rlv0umd7rnq7"]
+[gd_scene format=3 uid="uid://bidomgm7ctimo"]
 
-[ext_resource type="Script" uid="uid://mmlhjkrax86p" path="res://scripts/game.gd" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://dgbfe0a7um58p" path="res://scripts/level.gd" id="2_dinhu"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_uwrxv"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="2_dinhu"]
 [ext_resource type="Resource" uid="uid://bg5oo5ufyg4tt" path="res://ressources/levels/Level_01.tres" id="3_kvuet"]
 [ext_resource type="Resource" uid="uid://cdtuk68hjrbrp" path="res://ressources/levels/Level_02.tres" id="4_trtic"]
 [ext_resource type="Resource" uid="uid://mpwrgmhuajkv" path="res://ressources/levels/Level_03.tres" id="5_ir15t"]
@@ -12,9 +12,9 @@
 [ext_resource type="Resource" uid="uid://bw3mxnl7w0jk4" path="res://ressources/levels/Level_08.tres" id="10_1kice"]
 [ext_resource type="Resource" uid="uid://dtxdcvfrot2s8" path="res://ressources/levels/Level_09.tres" id="11_5newe"]
 [ext_resource type="Resource" uid="uid://dmoqaibjq630q" path="res://ressources/levels/Level_10.tres" id="12_37s47"]
-[ext_resource type="PackedScene" uid="uid://dmtg1nin4bq1" path="res://scenes/character_spawner.tscn" id="13_kvuet"]
+[ext_resource type="PackedScene" uid="uid://gwao08t8bd7k" path="res://scenes/character_spawner.tscn" id="13_kvuet"]
 [ext_resource type="Texture2D" uid="uid://dbarlmfg5qyvo" path="res://assets/dance_floor/dance_floor.png" id="13_rysoc"]
-[ext_resource type="Script" uid="uid://c2nd17karykng" path="res://scripts/cheat_ui.gd" id="14_trtic"]
+[ext_resource type="Script" path="res://scripts/cheat_ui.gd" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bvd4yyq0ee5ss" path="res://scenes/info_flash.tscn" id="16_ca42v"]
 
@@ -33,6 +33,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_rysoc")
 
 [node name="CharacterSpawner" parent="." unique_id=1560401905 instance=ExtResource("13_kvuet")]
+y_sort_enabled = true
 
 [node name="CheatUI" type="HBoxContainer" parent="." unique_id=1033743999]
 offset_right = 40.0

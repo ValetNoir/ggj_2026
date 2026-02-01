@@ -33,15 +33,17 @@ size = Vector2(130, 128)
 script = ExtResource("1_rkhd4")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=103487943]
-position = Vector2(0, 89.00001)
+position = Vector2(0, -6.9999924)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_lrhn5")
 autoplay = "default"
 
 [node name="Mask" parent="." unique_id=1409669806 instance=ExtResource("3_lrhn5")]
+position = Vector2(0, -96)
 scale = Vector2(0.1, 0.1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=810358447]
+position = Vector2(0, -96.00001)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1375038495]
 shape = SubResource("RectangleShape2D_my7n2")
