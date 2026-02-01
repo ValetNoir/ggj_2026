@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dqpe5etala8ng"]
+
+[ext_resource type="FontFile" uid="uid://m33ipl5yk6bl" path="res://ressources/fonts/Julee-Regular.ttf" id="1_l18we"]
+
+[resource]
+font = ExtResource("1_l18we")
+font_size = 120
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
