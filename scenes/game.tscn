@@ -28,7 +28,9 @@
 [ext_resource type="Resource" uid="uid://cbms30bucsbpy" path="res://ressources/levels/Level_19.tres" id="21_gxtfn"]
 [ext_resource type="Resource" uid="uid://b6poouwkkioih" path="res://ressources/levels/Level_20.tres" id="22_twgab"]
 [ext_resource type="PackedScene" uid="uid://dxrydp6dwoffm" path="res://scenes/disco_ball.tscn" id="24_suyxu"]
-[ext_resource type="PackedScene" path="res://scenes/curtains.tscn" id="28_sww3w"]
+[ext_resource type="Theme" uid="uid://bv1c2mvbc8mml" path="res://ressources/themes/info_flash_richtext.tres" id="28_sgl2t"]
+[ext_resource type="PackedScene" uid="uid://bxu3v15or16o0" path="res://scenes/curtains.tscn" id="28_sww3w"]
+[ext_resource type="Script" uid="uid://bu72utq8tbw4x" path="res://scenes/level_counter.gd" id="29_qouja"]
 
 [node name="Game" type="Node2D" unique_id=607520342]
 script = ExtResource("1_uwrxv")
@@ -72,7 +74,19 @@ text = "Next Level"
 
 [node name="InfoFlash" parent="CanvasLayer" unique_id=1219634045 instance=ExtResource("16_ca42v")]
 unique_name_in_owner = true
-visible = false
+
+[node name="LevelCounter" type="RichTextLabel" parent="CanvasLayer" unique_id=612534218]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.5
+offset_right = 148.49951
+offset_bottom = 182.0
+grow_horizontal = 2
+theme = ExtResource("28_sgl2t")
+text = "Level Count : "
+horizontal_alignment = 1
+script = ExtResource("29_qouja")
 
 [node name="disco_ball" parent="." unique_id=1477989180 instance=ExtResource("24_suyxu")]
 position = Vector2(960, -3.9999924)

@@ -26,8 +26,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_my7n2"]
-size = Vector2(130, 128)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_lrhn5"]
+points = PackedVector2Array(50, 0, 38, 50.5, -38, 50.5, -49, 0.5, -19, -46.5, 19, -46.5)
 
 [node name="Character" type="Node2D" unique_id=824456391]
 script = ExtResource("1_rkhd4")
@@ -46,6 +46,7 @@ scale = Vector2(0.1, 0.1)
 position = Vector2(0, -96.00001)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1375038495]
-shape = SubResource("RectangleShape2D_my7n2")
+position = Vector2(0, -0.49999237)
+shape = SubResource("ConvexPolygonShape2D_lrhn5")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

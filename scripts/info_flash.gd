@@ -27,7 +27,7 @@ func on_new_level_diplay_info_flash(duration: float):
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		print("click coin")
+		pass
 
 func _process(delta: float) -> void:
 	timer_label.text = str(snapped(timer.time_left, 0.1)) + "s"

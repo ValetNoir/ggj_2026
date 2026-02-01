@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://dbpa350c6x4fh"]
+[gd_scene format=3 uid="uid://bxu3v15or16o0"]
 
-[ext_resource type="Script" uid="uid://tcbe5uxckat3" path="res://scripts/curtains.gd" id="1_dtp0v"]
+[ext_resource type="Script" path="res://scripts/curtains.gd" id="1_dtp0v"]
 [ext_resource type="Texture2D" uid="uid://bf1igu6vq7vv0" path="res://assets/ui/rideau.png" id="1_mvr83"]
 
 [node name="Curtains" type="Node2D" unique_id=914103840 node_paths=PackedStringArray("curtains")]
+z_index = 2
 script = ExtResource("1_dtp0v")
 curtains = [NodePath("Curtain_Right/Curtain"), NodePath("Curtain_Left/Curtain")]
 
