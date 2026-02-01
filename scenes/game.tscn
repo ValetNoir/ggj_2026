@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dbarlmfg5qyvo" path="res://assets/dance_floor/dance_floor.png" id="13_rysoc"]
 [ext_resource type="Script" uid="uid://c2nd17karykng" path="res://scripts/cheat_ui.gd" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="15_ir15t"]
-[ext_resource type="PackedScene" path="res://scenes/info_flash.tscn" id="16_ca42v"]
+[ext_resource type="PackedScene" uid="uid://bvd4yyq0ee5ss" path="res://scenes/info_flash.tscn" id="16_ca42v"]
 
 [node name="Game" type="Node2D" unique_id=607520342]
 script = ExtResource("1_uwrxv")
