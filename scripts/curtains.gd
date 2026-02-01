@@ -7,11 +7,12 @@ func _ready() -> void:
 	pass
 
 func close_curtains() -> void:
+	SignalBus.play_sfx.emit(SignalBus.SFX.CLOSE_CURTAIN)
 	await _set_curtains_closed(true)
 
 func open_curtains() -> void:
+	SignalBus.play_sfx.emit(SignalBus.SFX.OPEN_CURTAIN)
 	await _set_curtains_closed(false)
-	
 
 func _set_curtains_closed(closed: bool) -> void:
 	var target_position: Vector2 = Vector2.ZERO

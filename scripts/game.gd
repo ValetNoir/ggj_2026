@@ -11,7 +11,7 @@ extends Node2D
 @onready var game_over_menu: Control = %GameOverMenu
 @onready var title_menu: Control = %TitleMenu
 @onready var lore: Control = %Lore
-@onready var level_counter: RichTextLabel = $CanvasLayer/LevelCounter
+@onready var level_counter: RichTextLabel = $CanvasLayer/InfoFlash/LevelCounter
 
 signal level_loaded(level_index: int, levels_count: int)
 
