@@ -34,12 +34,16 @@
 [ext_resource type="PackedScene" uid="uid://cbnk1b7crmvpp" path="res://scenes/upper_menu.tscn" id="30_wljb1"]
 [ext_resource type="LabelSettings" uid="uid://dqpe5etala8ng" path="res://ressources/themes/game_over_label.tres" id="31_js0lu"]
 [ext_resource type="Texture2D" uid="uid://d31ero2p8t5yd" path="res://assets/ui/papier_froisse.png" id="32_gxtfn"]
+[ext_resource type="FontFile" uid="uid://m33ipl5yk6bl" path="res://ressources/fonts/Julee-Regular.ttf" id="32_twgab"]
 [ext_resource type="PackedScene" uid="uid://bpjlypaco6u3g" path="res://scenes/audio_manager.tscn" id="35_gxtfn"]
 
 [sub_resource type="Theme" id="Theme_qouja"]
 
 [sub_resource type="Theme" id="Theme_js0lu"]
-Button/font_sizes/font_size = 50
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 12
+Button/font_sizes/font_size = 80
+Button/fonts/font = ExtResource("32_twgab")
 
 [node name="Game" type="Node2D" unique_id=607520342]
 script = ExtResource("1_uwrxv")
@@ -176,6 +180,7 @@ text = "DISCOSAURUS"
 label_settings = ExtResource("31_js0lu")
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/TitleMenu" unique_id=1878440867]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -193,6 +198,7 @@ text = "Play"
 
 [node name="Lore" type="Control" parent="CanvasLayer/TitleMenu" unique_id=1939744134]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 0
 offset_left = 502.0
 offset_top = 37.0

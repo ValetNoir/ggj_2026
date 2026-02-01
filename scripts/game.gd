@@ -11,7 +11,7 @@ extends Node2D
 @onready var game_over_menu: Control = %GameOverMenu
 @onready var title_menu: Control = %TitleMenu
 @onready var lore: Control = %Lore
-@onready var level_counter: RichTextLabel = $CanvasLayer/LevelCounter
+@onready var level_counter: RichTextLabel = $CanvasLayer/InfoFlash/LevelCounter
 
 signal level_loaded(level_index: int, levels_count: int)
 
@@ -30,6 +30,7 @@ func reset():
 	level_counter.show()
 	load_level(current_level_index)
 	SignalBus.play_music.emit(SignalBus.MUSIC.GAME)
+	SignalBus.play_sfx.emit(SignalBus.SFX.CROWD)
 
 func _ready() -> void:
 	show_title_menu()

@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://ba121b6a34gbu" path="res://assets/audio/sfx/Strike-Gain.wav" id="11_ic5jq"]
 [ext_resource type="AudioStream" uid="uid://b06pvrnde67n6" path="res://assets/audio/sfx/Strike-Lose.wav" id="12_if78k"]
 [ext_resource type="AudioStream" uid="uid://bys5nyidhh3v8" path="res://assets/audio/sfx/Hint-Opening.wav" id="13_oucy0"]
-[ext_resource type="AudioStream" uid="uid://cqqv72dktrg51" path="res://assets/audio/sfx/Crowd-Ambient-Loop.wav" id="14_cuol6"]
+[ext_resource type="AudioStream" uid="uid://bqmcq6j8gy5gw" path="res://assets/audio/sfx/Crowd-Ambient-Loop.mp3" id="14_oucy0"]
 [ext_resource type="AudioStream" uid="uid://dxpjiy5uhq8jm" path="res://assets/audio/sfx/Curtains-Open.wav" id="15_m1k83"]
 [ext_resource type="AudioStream" uid="uid://b8b4okvnow2p0" path="res://assets/audio/sfx/Curtains-Close.wav" id="16_oummu"]
 
@@ -53,7 +53,7 @@ stream = ExtResource("12_if78k")
 stream = ExtResource("13_oucy0")
 
 [node name="SFXAudioStreamPlayerCrowd" type="AudioStreamPlayer" parent="." unique_id=497976147]
-stream = ExtResource("14_cuol6")
+stream = ExtResource("14_oucy0")
 
 [node name="SFXAudioStreamPlayerCurtainOpen" type="AudioStreamPlayer" parent="." unique_id=130061142]
 stream = ExtResource("15_m1k83")
