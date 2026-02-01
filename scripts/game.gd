@@ -11,6 +11,7 @@ signal level_loaded(int)
 func _ready() -> void:
 	load_level(current_level_index)
 	character_spawner.target_found.connect(_on_target_found)
+	character_spawner.wrong_character_clicked.connect(_on_wrong_target)
 
 func load_level(level: int) -> void:
 	assert(level >= 0 and level < levels.size(), "Invalid level: %d" % level)
@@ -33,3 +34,7 @@ func show_victory_screen() -> void:
 
 func _on_target_found() -> void:
 	next_level()
+
+func _on_wrong_target() -> void:
+	pass
+	#upper_menu.strike()
