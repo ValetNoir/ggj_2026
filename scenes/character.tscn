@@ -1,30 +1,8 @@
 [gd_scene format=3 uid="uid://b6k3bul7hs57g"]
 
 [ext_resource type="Script" uid="uid://bj4oldus8rkuj" path="res://scripts/character.gd" id="1_rkhd4"]
-[ext_resource type="Texture2D" uid="uid://cxe2jitsctgpy" path="res://assets/bodies/body_01.png" id="2_lrhn5"]
+[ext_resource type="SpriteFrames" uid="uid://c14akn1u7amqn" path="res://ressources/spriteframes/body1_sprite_frames.tres" id="2_lrhn5"]
 [ext_resource type="PackedScene" uid="uid://bf01jl6xk7ctv" path="res://scenes/mask.tscn" id="3_lrhn5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_my7n2"]
-atlas = ExtResource("2_lrhn5")
-region = Rect2(0, 0, 900, 1490)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dp8ca"]
-atlas = ExtResource("2_lrhn5")
-region = Rect2(900, 0, 900, 1490)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_lrhn5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_my7n2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dp8ca")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_lrhn5"]
 points = PackedVector2Array(50, 0, 38, 50.5, -38, 50.5, -49, 0.5, -19, -46.5, 19, -46.5)
@@ -35,7 +13,7 @@ script = ExtResource("1_rkhd4")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=103487943]
 position = Vector2(0, -6.9999924)
 scale = Vector2(0.2, 0.2)
-sprite_frames = SubResource("SpriteFrames_lrhn5")
+sprite_frames = ExtResource("2_lrhn5")
 autoplay = "default"
 
 [node name="Mask" parent="." unique_id=1409669806 instance=ExtResource("3_lrhn5")]

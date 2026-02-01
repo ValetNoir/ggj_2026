@@ -4,6 +4,7 @@ extends Node2D
 @onready var _character_scene = preload("res://scenes/character.tscn")
 @export var number_to_generate: int = 20
 @export var max_similarity: int = 1
+@export var character_spriteframes: Array[SpriteFrames]
 var _spawn_rect: Rect2 = Rect2()
 const _spawn_margin: float = 250.0
 
@@ -31,6 +32,8 @@ func spawn(description: Description) -> void:
 	assert(is_instance_valid(character), "Invalid character")
 	character.global_position = spawn_position
 	add_child(character)
+	character = character as Character
+	character._set_character_spriteframe(character_spriteframes[randi_range(0, character_spriteframes.size() - 1)])
 	character._mask.set_description(description)
 	character.character_clicked.connect(_on_character_clicked)
 	character._valid_rect = _spawn_rect;
