@@ -29,4 +29,5 @@ func set_description(_description = description):
 
 	emotion.texture = description.get_emotion_texture()
 	shape.material.set_shader_parameter("mask_color", description.get_color())
+	mouth.material.set_shader_parameter("mask_color", description.get_color())
 	shape.material.set_shader_parameter("overlay_tex", description.get_pattern_texture())
