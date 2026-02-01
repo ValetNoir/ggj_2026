@@ -18,6 +18,7 @@ func display_info(duration: float):
 	show()
 	var tween1 = get_tree().create_tween()
 	tween1.tween_property(self, 'position', Vector2.ZERO, tween_duration)
+	SignalBus.play_sfx.emit(SignalBus.SFX.HINT)
 	await tween1.finished
 	timer_label.show()
 	timer.wait_time = duration
@@ -27,6 +28,7 @@ func display_info(duration: float):
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(self, 'position', offset, tween_duration)
 	tween2.tween_callback(hide)
+	SignalBus.play_sfx.emit(SignalBus.SFX.HINT)
 	await tween2.finished
 
 func _gui_input(event: InputEvent) -> void:
@@ -38,64 +40,65 @@ func _process(_delta: float) -> void:
 
 func set_description(description: Description):
 	var text: String = ""
-	#text += str("[ul]")
+	var line_break = str("
+")
 	match description.species:
 		Description.Species.DIPLODOCUS:
-			text += str("[ul]My dino mask is a [font_size=54]Diplodocus[/font_size][br]")
-			text += str("His head is pear-shaped[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Diplodocus[/font_size]")
+			text += str(line_break, "His head is pear-shaped")
 		Description.Species.BRACHIOSAURUS:
-			text += str("[ul]My dino mask is a [font_size=54]Brachiosaurus[/font_size][br]")
-			text += str("His head is pear-shaped[br]")
-			text += str("He has a crest[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Brachiosaurus[/font_size]")
+			text += str(line_break, "His head is pear-shaped")
+			text += str(line_break, "He has a crest")
 		Description.Species.TRICERATOPS:
-			text += str("[ul]My dino mask is a [font_size=54]Triceratops[/font_size][br]")
-			text += str("He has a frill[br]")
-			text += str("He has a beak[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Triceratops[/font_size]")
+			text += str(line_break, "He has a frill")
+			text += str(line_break, "He has a beak")
 		Description.Species.PROTOCERATOPS:
-			text += str("[ul]My dino mask is a [font_size=54]Protoceratops[/font_size][br]")
-			text += str("He has a frill[br]")
-			text += str("He has a beak[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Protoceratops[/font_size]")
+			text += str(line_break, "He has a frill")
+			text += str(line_break, "He has a beak")
 		Description.Species.TYRANNOSAURUS:
-			text += str("[ul]My dino mask is a [font_size=54]Tyrannosaurus[/font_size][br]")
-			text += str("He has a teethed mouth[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Tyrannosaurus[/font_size]")
+			text += str(line_break, "He has a teethed mouth")
 		Description.Species.CERATOSAURUS:
-			text += str("[ul]My dino mask is a [font_size=54]Ceratosaurus[/font_size][br]")
-			text += str("He has a teethed mouth[br]")
-			text += str("He has a horn[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Ceratosaurus[/font_size]")
+			text += str(line_break, "He has a teethed mouth")
+			text += str(line_break, "He has a horn")
 		Description.Species.HADROSAURUS:
-			text += str("[ul]My dino mask is a [font_size=54]Hadrosaurus[/font_size][br]")
-			text += str("He has a duck bill[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Hadrosaurus[/font_size]")
+			text += str(line_break, "He has a duck bill")
 		Description.Species.PARASAUROLOPHUS:
-			text += str("[ul]My dino mask is a [font_size=54]Parasaurolophus[/font_size][br]")
-			text += str("He has a crest[br]")
-			text += str("He has a duck bill[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Parasaurolophus[/font_size]")
+			text += str(line_break, "He has a crest")
+			text += str(line_break, "He has a duck bill")
 		Description.Species.OVIRAPTOR:
-			text += str("[ul]My dino mask is a [font_size=54]Oviraptor[/font_size][br]")
-			text += str("He has a crest[br]")
-			text += str("He has a beak[br]")
+			text += str("[ul]My dino mask is a [font_size=54]Oviraptor[/font_size]")
+			text += str(line_break, "He has a crest")
+			text += str(line_break, "He has a beak")
 		_:
 			pass
 	match description.color:
 		Description.MaskColor.RED:
-			text += str("He is red[br]")
+			text += str(line_break, "He is red")
 		Description.MaskColor.GREEN:
-			text += str("He is green[br]")
+			text += str(line_break, "He is green")
 		Description.MaskColor.BLUE:
-			text += str("He is blue[br]")
+			text += str(line_break, "He is blue")
 		_:
 			pass
 	match description.pattern:
 		Description.Pattern.DOTS:
-			text += str("He is covered in dots[br]")
+			text += str(line_break, "He is covered in dots")
 		Description.Pattern.FEATHERS:
-			text += str("He is covered in feathers[br]")
+			text += str(line_break, "He is covered in feathers")
 		_:
 			pass
 	match description.emotion:
 		Description.Emotion.HAPPY:
-			text += str("He looks happy[br][/ul]")
+			text += str(line_break, "He looks happy[/ul]")
 		Description.Emotion.SAD:
-			text += str("He looks sad[br][/ul]")
+			text += str(line_break, "He looks sad[/ul]")
 		_:
 			pass
 	update_text(text)

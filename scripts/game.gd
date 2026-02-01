@@ -29,6 +29,7 @@ func reset():
 	upper_menu.reset()
 	load_level(current_level_index)
 	SignalBus.play_music.emit(SignalBus.MUSIC.GAME)
+	SignalBus.play_sfx.emit(SignalBus.SFX.CROWD)
 
 func _ready() -> void:
 	show_title_menu()
