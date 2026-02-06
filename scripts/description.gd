@@ -26,10 +26,10 @@ enum Shape { PEAR, FRILL, CARNIVORE, DUCKBILL, EGG }
 @export var pattern: Pattern
 @export var color: MaskColor
 
-const PATTERN_TEXTURES: Dictionary[Pattern, CompressedTexture2D] = {
-	Pattern.NONE : preload("uid://c6hrpe6aj0762"),
-	Pattern.DOTS : preload("uid://cfrg4u7k7bp7u"),
-	Pattern.FEATHERS : preload("uid://cgvdktnnlf4j6"),
+const PATTERN_MATERIALS: Dictionary[Pattern, ShaderMaterial] = {
+	Pattern.NONE : preload("uid://vepbqbcpeftn"),
+	Pattern.DOTS : preload("uid://b5n7he8iqgd4o"),
+	Pattern.FEATHERS : preload("uid://vbia31wlci26"),
 };
 const COLORS: Dictionary[MaskColor, Color] = {
 	MaskColor.RED : Color.RED,
@@ -60,8 +60,8 @@ func get_phenotype() -> Phenotype:
 func get_emotion_texture() -> CompressedTexture2D:
 	return get_phenotype().EMOTIONS_TEXTURES[emotion]
 	
-func get_pattern_texture() -> CompressedTexture2D:
-	return PATTERN_TEXTURES[pattern]
+func get_pattern_material() -> ShaderMaterial:
+	return PATTERN_MATERIALS[pattern]
 
 func get_color() -> Color:
 	return COLORS[color]

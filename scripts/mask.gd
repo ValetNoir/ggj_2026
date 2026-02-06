@@ -12,7 +12,7 @@ func _ready() -> void:
 	set_description()
 
 func set_outline(value: bool) -> void:
-	shape.material.set_shader_parameter("is_outline_on", value)
+	shape.set_instance_shader_parameter("is_outline_on", value)
 	
 func set_description(_description = description):
 	description = _description
@@ -28,6 +28,6 @@ func set_description(_description = description):
 		horns.texture = null
 
 	emotion.texture = description.get_emotion_texture()
-	shape.material.set_shader_parameter("mask_color", description.get_color())
-	mouth.material.set_shader_parameter("mask_color", description.get_color())
-	shape.material.set_shader_parameter("overlay_tex", description.get_pattern_texture())
+	shape.material = description.get_pattern_material()
+	shape.set_instance_shader_parameter("mask_color", description.get_color())
+	mouth.set_instance_shader_parameter("mask_color", description.get_color())

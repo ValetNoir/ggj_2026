@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b5n7he8iqgd4o"]
+
+[ext_resource type="Shader" uid="uid://idse4fk51kte" path="res://scripts/silhouette.gdshader" id="1_q5tvl"]
+[ext_resource type="Texture2D" uid="uid://cfrg4u7k7bp7u" path="res://assets/mask/patterns/masks_spots.png" id="2_nqbvx"]
+
+[resource]
+shader = ExtResource("1_q5tvl")
+shader_parameter/overlay_tex = ExtResource("2_nqbvx")
