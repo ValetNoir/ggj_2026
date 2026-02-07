@@ -32,9 +32,9 @@ const PATTERN_TEXTURES: Dictionary[Pattern, CompressedTexture2D] = {
 	Pattern.FEATHERS : preload("uid://cgvdktnnlf4j6"),
 };
 const COLORS: Dictionary[MaskColor, Color] = {
-	MaskColor.RED : Color.RED,
-	MaskColor.GREEN : Color.GREEN,
-	MaskColor.BLUE : Color.BLUE,
+	MaskColor.RED : Color(0.914, 0.271, 0.0, 1.0),
+	MaskColor.GREEN : Color(0.307, 0.812, 0.266, 1.0),
+	MaskColor.BLUE : Color(0.315, 0.607, 0.94, 1.0),
 }
 const PHENOTYPES: Dictionary[Species, Phenotype] = {
 	Species.DIPLODOCUS : preload("uid://celuv2kf4o7sn"),
